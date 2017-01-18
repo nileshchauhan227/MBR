@@ -1,0 +1,27 @@
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\bin\Debug\POS.BAL.dll
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\bin\Debug\POS.BAL.pdb
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\bin\Debug\POS.DAL.dll
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\bin\Debug\POS.DTO.dll
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\bin\Debug\POS.DAL.pdb
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\bin\Debug\POS.DTO.pdb
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\obj\Debug\POS.BAL.csprojResolveAssemblyReference.cache
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\obj\Debug\POS.BAL.dll
+E:\Projects\RutuIcecream\Code\POS\POS.BAL\obj\Debug\POS.BAL.pdb
+E:\Projects\Gwalia Sweets\POS\POS.BAL\bin\Debug\POS.BAL.dll
+E:\Projects\Gwalia Sweets\POS\POS.BAL\bin\Debug\POS.BAL.pdb
+E:\Projects\Gwalia Sweets\POS\POS.BAL\bin\Debug\POS.DAL.dll
+E:\Projects\Gwalia Sweets\POS\POS.BAL\bin\Debug\POS.DTO.dll
+E:\Projects\Gwalia Sweets\POS\POS.BAL\bin\Debug\POS.DAL.pdb
+E:\Projects\Gwalia Sweets\POS\POS.BAL\bin\Debug\POS.DTO.pdb
+E:\Projects\Gwalia Sweets\POS\POS.BAL\obj\Debug\POS.BAL.csprojResolveAssemblyReference.cache
+E:\Projects\Gwalia Sweets\POS\POS.BAL\obj\Debug\POS.BAL.dll
+E:\Projects\Gwalia Sweets\POS\POS.BAL\obj\Debug\POS.BAL.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\bin\Debug\POS.BAL.dll
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\bin\Debug\POS.BAL.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\bin\Debug\POS.DAL.dll
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\bin\Debug\POS.DTO.dll
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\bin\Debug\POS.DAL.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\bin\Debug\POS.DTO.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\obj\Debug\POS.BAL.csprojResolveAssemblyReference.cache
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\obj\Debug\POS.BAL.dll
+E:\Projects\MBRFashionStudio\Trunk\POS.BAL\obj\Debug\POS.BAL.pdb

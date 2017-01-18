@@ -1,0 +1,13 @@
+E:\Projects\RutuIcecream\Code\POS\POS.DTO\bin\Debug\POS.DTO.dll
+E:\Projects\RutuIcecream\Code\POS\POS.DTO\bin\Debug\POS.DTO.pdb
+E:\Projects\RutuIcecream\Code\POS\POS.DTO\obj\Debug\POS.DTO.dll
+E:\Projects\RutuIcecream\Code\POS\POS.DTO\obj\Debug\POS.DTO.pdb
+E:\Projects\RutuIcecream\Code\POS\POS.DTO\obj\Debug\POS.DTO.csprojResolveAssemblyReference.cache
+E:\Projects\Gwalia Sweets\POS\POS.DTO\bin\Debug\POS.DTO.dll
+E:\Projects\Gwalia Sweets\POS\POS.DTO\bin\Debug\POS.DTO.pdb
+E:\Projects\Gwalia Sweets\POS\POS.DTO\obj\Debug\POS.DTO.dll
+E:\Projects\Gwalia Sweets\POS\POS.DTO\obj\Debug\POS.DTO.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.DTO\obj\Debug\POS.DTO.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.DTO\bin\Debug\POS.DTO.dll
+E:\Projects\MBRFashionStudio\Trunk\POS.DTO\bin\Debug\POS.DTO.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.DTO\obj\Debug\POS.DTO.dll

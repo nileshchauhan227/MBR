@@ -1,0 +1,84 @@
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\bin\Debug\POS_Reports.exe.config
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\bin\Debug\POS_Reports.exe
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\bin\Debug\POS_Reports.pdb
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.Properties.Resources.resources
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.rptDetailSalesReport.resources
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.rptInvoiceWiseSalesSummary.resources
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwiseReport.resources
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwSaleswiseReport.resources
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesRegister.resources
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesSummary.resources
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.csproj.GenerateResource.Cache
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\RdlCompile.cache
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\RdlCompile.compiled
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.exe
+C:\Users\TEJASH\Dropbox\NTAccess Team Folder\RUTU\POS_Reports\obj\x86\Debug\POS_Reports.pdb
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\bin\Debug\POS_Reports.exe.config
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\bin\Debug\POS_Reports.exe
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\bin\Debug\POS_Reports.pdb
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.Properties.Resources.resources
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptDetailSalesReport.resources
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptInvoiceWiseSalesSummary.resources
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwiseReport.resources
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwSaleswiseReport.resources
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesRegister.resources
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesSummary.resources
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.csproj.GenerateResource.Cache
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\RdlCompile.cache
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\RdlCompile.compiled
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.exe
+E:\Projects\RutuIcecream\Code\POS\POS_Reports\obj\x86\Debug\POS_Reports.pdb
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.csprojResolveAssemblyReference.cache
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.Properties.Resources.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptDetailSalesReport.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptEODReport.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptInvoiceWiseSalesSummary.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwiseReport.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwSaleswiseReport.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesRegister.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesSummary.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesSummaryFirmwise.resources
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.csproj.GenerateResource.Cache
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\RdlCompile.cache
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\RdlCompile.compiled
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS_Reports.exe.config
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS_Reports.exe
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS_Reports.pdb
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS.BAL.dll
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS.DTO.dll
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS.DAL.dll
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS.BAL.pdb
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS.DTO.pdb
+E:\Projects\Gwalia Sweets\POS\POS_Reports\bin\Debug\POS.DAL.pdb
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.exe
+E:\Projects\Gwalia Sweets\POS\POS_Reports\obj\x86\Debug\POS_Reports.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.csprojResolveAssemblyReference.cache
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.Properties.Resources.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptBill.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptBillDental.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptDetailSalesReport.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptEODReport.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptInvoiceWiseSalesSummary.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwiseReport.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptItemwSaleswiseReport.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptPurchaseDetails.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesDetails.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesRegister.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesSummary.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptSalesSummaryFirmwise.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptStockBalance.resources
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.csproj.GenerateResource.Cache
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\RdlCompile.cache
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\RdlCompile.compiled
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS_Reports.exe.config
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS_Reports.exe
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS_Reports.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS.BAL.dll
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS.DTO.dll
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS.DAL.dll
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS.BAL.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS.DTO.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\bin\Debug\POS.DAL.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.exe
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS_Reports\obj\x86\Debug\POS_Reports.rptEODReportDayWise.resources

@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POS_RutuModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="POS_RutuModelStoreContainer">
+    <EntitySet Name="BillDetails" EntityType="POS_RutuModel.Store.BillDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BillMaster" EntityType="POS_RutuModel.Store.BillMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CashExpense" EntityType="POS_RutuModel.Store.CashExpense" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CodeMaster" EntityType="POS_RutuModel.Store.CodeMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CodeType" EntityType="POS_RutuModel.Store.CodeType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CompanyMaster" EntityType="POS_RutuModel.Store.CompanyMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConfigurationSetting" EntityType="POS_RutuModel.Store.ConfigurationSetting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerMaster" EntityType="POS_RutuModel.Store.CustomerMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemBarcode" EntityType="POS_RutuModel.Store.ItemBarcode" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemMaster" EntityType="POS_RutuModel.Store.ItemMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KOTDetail" EntityType="POS_RutuModel.Store.KOTDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KOTMaster" EntityType="POS_RutuModel.Store.KOTMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PurchaseDetail" EntityType="POS_RutuModel.Store.PurchaseDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PurchaseMaster" EntityType="POS_RutuModel.Store.PurchaseMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PurchaseReturnDetail" EntityType="POS_RutuModel.Store.PurchaseReturnDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PurchaseReturnMaster" EntityType="POS_RutuModel.Store.PurchaseReturnMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesReturnDetail" EntityType="POS_RutuModel.Store.SalesReturnDetail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SalesReturnMaster" EntityType="POS_RutuModel.Store.SalesReturnMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StockBalance" EntityType="POS_RutuModel.Store.StockBalance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserLogin" EntityType="POS_RutuModel.Store.UserLogin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserType" EntityType="POS_RutuModel.Store.UserType" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_BillDetails_BillDetails" Association="POS_RutuModel.Store.FK_BillDetails_BillDetails">
+      <End Role="BillMaster" EntitySet="BillMaster" />
+      <End Role="BillDetails" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillDetails_ItemMaster" Association="POS_RutuModel.Store.FK_BillDetails_ItemMaster">
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+      <End Role="BillDetails" EntitySet="BillDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillMaster_TableID_CodeMaster_ID" Association="POS_RutuModel.Store.FK_BillMaster_TableID_CodeMaster_ID">
+      <End Role="CodeMaster" EntitySet="CodeMaster" />
+      <End Role="BillMaster" EntitySet="BillMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillMaster_WaiterID_CodeMaster_ID" Association="POS_RutuModel.Store.FK_BillMaster_WaiterID_CodeMaster_ID">
+      <End Role="CodeMaster" EntitySet="CodeMaster" />
+      <End Role="BillMaster" EntitySet="BillMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CodeMaster_CodeMaster" Association="POS_RutuModel.Store.FK_CodeMaster_CodeMaster">
+      <End Role="CodeType" EntitySet="CodeType" />
+      <End Role="CodeMaster" EntitySet="CodeMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FirmId_CodeMaster" Association="POS_RutuModel.Store.FK_FirmId_CodeMaster">
+      <End Role="CodeMaster" EntitySet="CodeMaster" />
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemBarcode_BillMaster" Association="POS_RutuModel.Store.FK_ItemBarcode_BillMaster">
+      <End Role="BillMaster" EntitySet="BillMaster" />
+      <End Role="ItemBarcode" EntitySet="ItemBarcode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemBarcode_PurchaseDetail" Association="POS_RutuModel.Store.FK_ItemBarcode_PurchaseDetail">
+      <End Role="PurchaseDetail" EntitySet="PurchaseDetail" />
+      <End Role="ItemBarcode" EntitySet="ItemBarcode" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemMaster_CodeMaster" Association="POS_RutuModel.Store.FK_ItemMaster_CodeMaster">
+      <End Role="CodeMaster" EntitySet="CodeMaster" />
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemMaster_ItemMaster" Association="POS_RutuModel.Store.FK_ItemMaster_ItemMaster">
+      <End Role="CodeMaster" EntitySet="CodeMaster" />
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KOTDetail_ItemMaster" Association="POS_RutuModel.Store.FK_KOTDetail_ItemMaster">
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+      <End Role="KOTDetail" EntitySet="KOTDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KOTDetail_KOTMaster" Association="POS_RutuModel.Store.FK_KOTDetail_KOTMaster">
+      <End Role="KOTMaster" EntitySet="KOTMaster" />
+      <End Role="KOTDetail" EntitySet="KOTDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KOTMaster_CodeMaster" Association="POS_RutuModel.Store.FK_KOTMaster_CodeMaster">
+      <End Role="CodeMaster" EntitySet="CodeMaster" />
+      <End Role="KOTMaster" EntitySet="KOTMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseDetail_ItemMaster" Association="POS_RutuModel.Store.FK_PurchaseDetail_ItemMaster">
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+      <End Role="PurchaseDetail" EntitySet="PurchaseDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseDetail_PurchaseMaster" Association="POS_RutuModel.Store.FK_PurchaseDetail_PurchaseMaster">
+      <End Role="PurchaseMaster" EntitySet="PurchaseMaster" />
+      <End Role="PurchaseDetail" EntitySet="PurchaseDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseMaster_CompanyMaster" Association="POS_RutuModel.Store.FK_PurchaseMaster_CompanyMaster">
+      <End Role="CompanyMaster" EntitySet="CompanyMaster" />
+      <End Role="PurchaseMaster" EntitySet="PurchaseMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseReturnDetail_PurchaseReturnDetail" Association="POS_RutuModel.Store.FK_PurchaseReturnDetail_PurchaseReturnDetail">
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+      <End Role="PurchaseReturnDetail" EntitySet="PurchaseReturnDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PurchaseReturnDetail_PurchaseReturnMaster" Association="POS_RutuModel.Store.FK_PurchaseReturnDetail_PurchaseReturnMaster">
+      <End Role="PurchaseReturnMaster" EntitySet="PurchaseReturnMaster" />
+      <End Role="PurchaseReturnDetail" EntitySet="PurchaseReturnDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesReturnDetail_ItemMaster" Association="POS_RutuModel.Store.FK_SalesReturnDetail_ItemMaster">
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+      <End Role="SalesReturnDetail" EntitySet="SalesReturnDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesReturnDetail_SalesReturnMaster" Association="POS_RutuModel.Store.FK_SalesReturnDetail_SalesReturnMaster">
+      <End Role="SalesReturnMaster" EntitySet="SalesReturnMaster" />
+      <End Role="SalesReturnDetail" EntitySet="SalesReturnDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalesReturnMaster_SalesReturnMaster" Association="POS_RutuModel.Store.FK_SalesReturnMaster_SalesReturnMaster">
+      <End Role="BillMaster" EntitySet="BillMaster" />
+      <End Role="SalesReturnMaster" EntitySet="SalesReturnMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockBalance_ItemMaster" Association="POS_RutuModel.Store.FK_StockBalance_ItemMaster">
+      <End Role="ItemMaster" EntitySet="ItemMaster" />
+      <End Role="StockBalance" EntitySet="StockBalance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLogin_UserLogin" Association="POS_RutuModel.Store.FK_UserLogin_UserLogin">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="UserLogin" EntitySet="UserLogin" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BillDetails">
+    <Key>
+      <PropertyRef Name="BillDetailID" />
+    </Key>
+    <Property Name="BillDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BillID" Type="int" Nullable="false" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="Quantity" Type="decimal" Scale="2" />
+    <Property Name="Rate" Type="decimal" Scale="2" />
+    <Property Name="Discount" Type="decimal" Scale="2" />
+    <Property Name="Amount" Type="decimal" Scale="2" />
+    <Property Name="Tax" Type="decimal" Scale="2" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BillMaster">
+    <Key>
+      <PropertyRef Name="BillID" />
+    </Key>
+    <Property Name="BillID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Series" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Rnumber" Type="int" Nullable="false" />
+    <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+    <Property Name="Party" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TableID" Type="int" />
+    <Property Name="WaiterID" Type="int" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="10" />
+    <Property Name="NoOfItems" Type="int" />
+    <Property Name="GrossAmount" Type="decimal" Scale="2" />
+    <Property Name="DiscountPercentage" Type="decimal" Scale="2" />
+    <Property Name="Discount" Type="decimal" Scale="2" />
+    <Property Name="DiscountReason" Type="varchar" MaxLength="100" />
+    <Property Name="Tax" Type="decimal" Scale="2" />
+    <Property Name="NetAmount" Type="decimal" Scale="2" />
+    <Property Name="CashReceived" Type="decimal" Scale="2" />
+    <Property Name="RoundOff" Type="decimal" Scale="2" />
+    <Property Name="IsPrinted" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="AdditionalPercentage" Type="decimal" Scale="2" />
+    <Property Name="AdditionalTax" Type="decimal" Scale="2" />
+    <Property Name="BillTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="CashExpense">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ExpDetail" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="ExpDate" Type="datetime" Nullable="false" />
+    <Property Name="ReceiverName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Amount" Type="numeric" Nullable="false" Scale="2" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CodeMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+    <Property Name="CodeTypeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CodeType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Code" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="CompanyMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="150" />
+    <Property Name="CompanyAddress" Type="varchar(max)" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="15" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="10" />
+    <Property Name="EmailId" Type="varchar" MaxLength="30" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ConfigurationSetting">
+    <Key>
+      <PropertyRef Name="ConfigurationId" />
+    </Key>
+    <Property Name="ConfigurationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ConfigurationKey" Type="varchar" MaxLength="50" />
+    <Property Name="ConfigurationValue" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CustomerMaster">
+    <Key>
+      <PropertyRef Name="CustomerId" />
+    </Key>
+    <Property Name="CustomerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="150" />
+    <Property Name="CustomerAddress" Type="varchar" MaxLength="1000" />
+    <Property Name="EmailId" Type="varchar" MaxLength="150" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="ItemBarcode">
+    <Key>
+      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="BarCode" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="BarCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PurchaseDetailID" Type="bigint" />
+    <Property Name="IsSold" Type="bit" />
+    <Property Name="Status" Type="smallint" />
+    <Property Name="BillID" Type="int" />
+  </EntityType>
+  <EntityType Name="ItemMaster">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+    <Property Name="ItemName" Type="varchar" MaxLength="100" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="UnitID" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="decimal" Scale="2" />
+    <Property Name="Rate" Type="decimal" Scale="2" />
+    <Property Name="OtherDiscount" Type="decimal" Scale="2" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="FirmId" Type="int" />
+    <Property Name="ServiceTax" Type="bit" />
+    <Property Name="OpeningBalance" Type="decimal" />
+    <Property Name="IsSaleable" Type="bit" />
+    <Property Name="IsUniqueSerialNumber" Type="bit" />
+  </EntityType>
+  <EntityType Name="KOTDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KOTID" Type="int" />
+    <Property Name="ItemID" Type="int" />
+    <Property Name="Quantity" Type="decimal" Scale="2" />
+    <Property Name="IsServed" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="KOTMaster">
+    <Key>
+      <PropertyRef Name="KOTID" />
+    </Key>
+    <Property Name="KOTID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SRNumber" Type="int" Nullable="false" />
+    <Property Name="KOTDateTime" Type="datetime" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="TableID" Type="int" Nullable="false" />
+    <Property Name="IsBillGenerated" Type="bit" />
+    <Property Name="TobeMaintained" Type="bit" />
+    <Property Name="BillID" Type="int" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PurchaseDetail">
+    <Key>
+      <PropertyRef Name="PurchaseDetailID" />
+    </Key>
+    <Property Name="PurchaseDetailID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseID" Type="bigint" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Quantity" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="PricePerItem" Type="decimal" Scale="2" />
+    <Property Name="MRPPerItem" Type="decimal" Scale="2" />
+  </EntityType>
+  <EntityType Name="PurchaseMaster">
+    <Key>
+      <PropertyRef Name="PurchaseID" />
+    </Key>
+    <Property Name="PurchaseID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PONumber" Type="varchar" MaxLength="100" />
+    <Property Name="PODate" Type="datetime" />
+    <Property Name="InvoiceNumber" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="ReceivedBy" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Remarks" Type="varchar" MaxLength="500" />
+    <Property Name="InvoiceAmount" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="TransactionType" Type="smallint" Nullable="false" />
+    <Property Name="Career" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="VendorID" Type="int" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="int" />
+  </EntityType>
+  <EntityType Name="PurchaseReturnDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PurchaseReturnMasterID" Type="bigint" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="ItemCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Qty" Type="decimal" Scale="2" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="PurchaseReturnMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReturnDate" Type="datetime" Nullable="false" />
+    <Property Name="PurchaseID" Type="bigint" Nullable="false" />
+    <Property Name="ReasonForReturn" Type="varchar" MaxLength="250" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalesReturnDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SalesReturnMasterID" Type="bigint" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="ItemCode" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Qty" Type="decimal" Nullable="false" Scale="2" />
+    <Property Name="PricePerUnit" Type="decimal" Nullable="false" Scale="2" />
+  </EntityType>
+  <EntityType Name="SalesReturnMaster">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ReturnDate" Type="datetime" Nullable="false" />
+    <Property Name="BillID" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="bigint" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedDate" Type="bigint" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="StockBalance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="ItemCode" Type="varchar" MaxLength="50" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="false" />
+    <Property Name="OpeningQty" Type="decimal" Scale="2" />
+    <Property Name="Purchase" Type="decimal" Scale="2" />
+    <Property Name="PurchaseReturn" Type="decimal" Scale="2" />
+    <Property Name="Sales" Type="decimal" Scale="2" />
+    <Property Name="SalesReturn" Type="decimal" Scale="2" />
+    <Property Name="ClosingQty" Type="decimal" Scale="2" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedBy" Type="nchar" MaxLength="10" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LoginID" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="50" />
+    <Property Name="UserType" Type="int" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeCode" />
+    </Key>
+    <Property Name="UserTypeCode" Type="int" Nullable="false" />
+    <Property Name="UserTypeName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BillDetails_BillDetails">
+    <End Role="BillMaster" Type="POS_RutuModel.Store.BillMaster" Multiplicity="1" />
+    <End Role="BillDetails" Type="POS_RutuModel.Store.BillDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BillMaster">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="BillDetails">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillDetails_ItemMaster">
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="0..1" />
+    <End Role="BillDetails" Type="POS_RutuModel.Store.BillDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMaster">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="BillDetails">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillMaster_TableID_CodeMaster_ID">
+    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="0..1" />
+    <End Role="BillMaster" Type="POS_RutuModel.Store.BillMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BillMaster">
+        <PropertyRef Name="TableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillMaster_WaiterID_CodeMaster_ID">
+    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="0..1" />
+    <End Role="BillMaster" Type="POS_RutuModel.Store.BillMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BillMaster">
+        <PropertyRef Name="WaiterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CodeMaster_CodeMaster">
+    <End Role="CodeType" Type="POS_RutuModel.Store.CodeType" Multiplicity="1" />
+    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CodeMaster">
+        <PropertyRef Name="CodeTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FirmId_CodeMaster">
+    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="0..1" />
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemMaster">
+        <PropertyRef Name="FirmId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemBarcode_BillMaster">
+    <End Role="BillMaster" Type="POS_RutuModel.Store.BillMaster" Multiplicity="0..1" />
+    <End Role="ItemBarcode" Type="POS_RutuModel.Store.ItemBarcode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BillMaster">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="ItemBarcode">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemBarcode_PurchaseDetail">
+    <End Role="PurchaseDetail" Type="POS_RutuModel.Store.PurchaseDetail" Multiplicity="0..1" />
+    <End Role="ItemBarcode" Type="POS_RutuModel.Store.ItemBarcode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseDetail">
+        <PropertyRef Name="PurchaseDetailID" />
+      </Principal>
+      <Dependent Role="ItemBarcode">
+        <PropertyRef Name="PurchaseDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemMaster_CodeMaster">
+    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="1" />
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemMaster">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemMaster_ItemMaster">
+    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="1" />
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ItemMaster">
+        <PropertyRef Name="GroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KOTDetail_ItemMaster">
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="0..1" />
+    <End Role="KOTDetail" Type="POS_RutuModel.Store.KOTDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMaster">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="KOTDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KOTDetail_KOTMaster">
+    <End Role="KOTMaster" Type="POS_RutuModel.Store.KOTMaster" Multiplicity="0..1" />
+    <End Role="KOTDetail" Type="POS_RutuModel.Store.KOTDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KOTMaster">
+        <PropertyRef Name="KOTID" />
+      </Principal>
+      <Dependent Role="KOTDetail">
+        <PropertyRef Name="KOTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KOTMaster_CodeMaster">
+    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="1" />
+    <End Role="KOTMaster" Type="POS_RutuModel.Store.KOTMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodeMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KOTMaster">
+        <PropertyRef Name="TableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseDetail_ItemMaster">
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="1" />
+    <End Role="PurchaseDetail" Type="POS_RutuModel.Store.PurchaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMaster">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="PurchaseDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseDetail_PurchaseMaster">
+    <End Role="PurchaseMaster" Type="POS_RutuModel.Store.PurchaseMaster" Multiplicity="1" />
+    <End Role="PurchaseDetail" Type="POS_RutuModel.Store.PurchaseDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseMaster">
+        <PropertyRef Name="PurchaseID" />
+      </Principal>
+      <Dependent Role="PurchaseDetail">
+        <PropertyRef Name="PurchaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseMaster_CompanyMaster">
+    <End Role="CompanyMaster" Type="POS_RutuModel.Store.CompanyMaster" Multiplicity="1" />
+    <End Role="PurchaseMaster" Type="POS_RutuModel.Store.PurchaseMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyMaster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PurchaseMaster">
+        <PropertyRef Name="VendorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseReturnDetail_PurchaseReturnDetail">
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="1" />
+    <End Role="PurchaseReturnDetail" Type="POS_RutuModel.Store.PurchaseReturnDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMaster">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="PurchaseReturnDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PurchaseReturnDetail_PurchaseReturnMaster">
+    <End Role="PurchaseReturnMaster" Type="POS_RutuModel.Store.PurchaseReturnMaster" Multiplicity="1" />
+    <End Role="PurchaseReturnDetail" Type="POS_RutuModel.Store.PurchaseReturnDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PurchaseReturnMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PurchaseReturnDetail">
+        <PropertyRef Name="PurchaseReturnMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesReturnDetail_ItemMaster">
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="1" />
+    <End Role="SalesReturnDetail" Type="POS_RutuModel.Store.SalesReturnDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMaster">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="SalesReturnDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesReturnDetail_SalesReturnMaster">
+    <End Role="SalesReturnMaster" Type="POS_RutuModel.Store.SalesReturnMaster" Multiplicity="1" />
+    <End Role="SalesReturnDetail" Type="POS_RutuModel.Store.SalesReturnDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SalesReturnMaster">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SalesReturnDetail">
+        <PropertyRef Name="SalesReturnMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalesReturnMaster_SalesReturnMaster">
+    <End Role="BillMaster" Type="POS_RutuModel.Store.BillMaster" Multiplicity="1" />
+    <End Role="SalesReturnMaster" Type="POS_RutuModel.Store.SalesReturnMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BillMaster">
+        <PropertyRef Name="BillID" />
+      </Principal>
+      <Dependent Role="SalesReturnMaster">
+        <PropertyRef Name="BillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockBalance_ItemMaster">
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="1" />
+    <End Role="StockBalance" Type="POS_RutuModel.Store.StockBalance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMaster">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="StockBalance">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLogin_UserLogin">
+    <End Role="UserType" Type="POS_RutuModel.Store.UserType" Multiplicity="0..1" />
+    <End Role="UserLogin" Type="POS_RutuModel.Store.UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeCode" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="UserType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DetailSalesReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="EODReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="date" Mode="In" />
+    <Parameter Name="ToDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetKotRecordsList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Date" Type="date" Mode="In" />
+  </Function>
+  <Function Name="GetRunningKOT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetShopDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fromdate" Type="datetime" Mode="In" />
+    <Parameter Name="toDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="GroupWiseSales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fromDate" Type="date" Mode="In" />
+    <Parameter Name="toDate" Type="date" Mode="In" />
+  </Function>
+  <Function Name="InvoiceWiseSalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ItemwiseReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="ItemwSalesiseReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SalesSummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="datetime" Mode="In" />
+    <Parameter Name="ToDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="UpodateStockBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="type" Type="char" Mode="In" />
+  </Function>
+</Schema>

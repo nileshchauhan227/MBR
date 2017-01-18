@@ -1,0 +1,100 @@
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.exe.config
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.exe
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.pdb
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.BAL.dll
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.DTO.dll
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS_Reports.exe
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.DAL.dll
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.BAL.pdb
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.DTO.pdb
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS_Reports.pdb
+E:\Projects\RutuIcecream\Code\POS\POS\bin\Debug\POS.DAL.pdb
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.csprojResolveAssemblyReference.cache
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.Form1.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.frmBill.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.frmCodeMaster.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.frmConfiguration.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.ItemMaster.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.frmKOT.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.frmMaintainBill.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.Login.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.Master.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.Properties.Resources.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.SalesReports.resources
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.csproj.GenerateResource.Cache
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.exe
+E:\Projects\RutuIcecream\Code\POS\POS\obj\x86\Debug\POS.pdb
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.csprojResolveAssemblyReference.cache
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.DirectBill.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.Form1.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.frmBill.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.frmCashExpense.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.frmCodeMaster.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.frmCompanyMaster.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.frmConfiguration.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.ItemMaster.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.frmKOT.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.frmMaintainBill.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.Import_Excel.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.Login.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.Master.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.Properties.Resources.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.ResetPassword.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.SalesReports.resources
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.csproj.GenerateResource.Cache
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.exe.config
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.exe
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.pdb
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.BAL.dll
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.DTO.dll
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.Utilities.dll
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS_Reports.exe
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.DAL.dll
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.BAL.pdb
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.DTO.pdb
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.Utilities.pdb
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS_Reports.pdb
+E:\Projects\Gwalia Sweets\POS\POS\bin\Debug\POS.DAL.pdb
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.exe
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.pdb
+E:\Projects\Gwalia Sweets\POS\POS\obj\x86\Debug\POS.Inward.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.csprojResolveAssemblyReference.cache
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.CompanySetup.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmCustomerMaster.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmDailyOpenClose.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmGetBarcode.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmOpeningBalance.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.InwardReturn.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.Inward.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.DirectBill.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.Form1.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmBill.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmCashExpense.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmCodeMaster.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmCompanyMaster.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmConfiguration.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.ItemMaster.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmKOT.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.frmMaintainBill.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.Import_Excel.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.Login.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.Master.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.Properties.Resources.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.ResetPassword.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.SalesReports.resources
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.csproj.GenerateResource.Cache
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.exe.config
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.exe
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.BAL.dll
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.DTO.dll
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.Utilities.dll
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS_Reports.exe
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.DAL.dll
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.BAL.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.DTO.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.Utilities.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS_Reports.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS\bin\Debug\POS.DAL.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.exe
+E:\Projects\MBRFashionStudio\Trunk\POS\obj\x86\Debug\POS.pdb

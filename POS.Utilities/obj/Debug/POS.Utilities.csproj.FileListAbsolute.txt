@@ -1,0 +1,8 @@
+E:\Projects\Gwalia Sweets\POS\POS.Utilities\bin\Debug\POS.Utilities.dll
+E:\Projects\Gwalia Sweets\POS\POS.Utilities\bin\Debug\POS.Utilities.pdb
+E:\Projects\Gwalia Sweets\POS\POS.Utilities\obj\Debug\POS.Utilities.dll
+E:\Projects\Gwalia Sweets\POS\POS.Utilities\obj\Debug\POS.Utilities.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.Utilities\bin\Debug\POS.Utilities.dll
+E:\Projects\MBRFashionStudio\Trunk\POS.Utilities\bin\Debug\POS.Utilities.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS.Utilities\obj\Debug\POS.Utilities.dll
+E:\Projects\MBRFashionStudio\Trunk\POS.Utilities\obj\Debug\POS.Utilities.pdb

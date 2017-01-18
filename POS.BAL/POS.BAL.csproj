@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{881BDDEE-7932-46F0-8F41-E093599D529F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POS.BAL</RootNamespace>
+    <AssemblyName>POS.BAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BALBase.cs" />
+    <Compile Include="clsBBackupService.cs" />
+    <Compile Include="clsBBill.cs" />
+    <Compile Include="clsBCashExpense.cs" />
+    <Compile Include="clsBCodeTypeMaster.cs" />
+    <Compile Include="clsBCompanyMaster.cs" />
+    <Compile Include="clsBConfiguration.cs" />
+    <Compile Include="clsBCustomerMaster.cs" />
+    <Compile Include="clsBDatabase.cs" />
+    <Compile Include="clsBInward.cs" />
+    <Compile Include="clsBItemMaster.cs" />
+    <Compile Include="clsBKOT.cs" />
+    <Compile Include="clsBPurchaseReturn.cs" />
+    <Compile Include="clsBReports.cs" />
+    <Compile Include="clsBStockBalance.cs" />
+    <Compile Include="clsBUserLogin.cs" />
+    <Compile Include="clsBCodeMaster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\POS.DAL\POS.DAL.csproj">
+      <Project>{093A3B95-E809-4056-AC4B-994AA276C63C}</Project>
+      <Name>POS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POS.DTO\POS.DTO.csproj">
+      <Project>{470D8B67-0E54-4D14-92AC-AE313C1C946E}</Project>
+      <Name>POS.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
