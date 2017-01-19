@@ -28,6 +28,7 @@ namespace POS
         public decimal AdditionalTaxPercentage { get; set; }
         public bool ServiceTaxEnabled { get; set; }
         public List<ItemMasterDTO> itemlist { get; set; }
+        public List<CustomerDTO> CustomerList { get; set; }
         //public bool KOTPrintOption { get; set; }
         //public bool GroupWiseKOTPrint { get; set; }
         //public List<int> kotIDs { get; set; }
@@ -46,10 +47,10 @@ namespace POS
             this.MinimumSize = new Size(this.Width, this.Height);
             this.MaximumSize = new Size(this.Width, this.Height);
             grdBill.AutoGenerateColumns = false;
-            txtInvoiceDate.Text = DateTime.Now.GetShortDateString();
+            dtInvoiceDate.Value = DateTime.Now;
             txtInvoiceTime.Text = DateTime.Now.ToString("hh:mm:ss");
-            BindTable();
-            BindParty();
+            BindNarration();
+
             BindCustomer();
             BindBillType();
             FillItemList();
@@ -76,31 +77,24 @@ namespace POS
                 this.CompulsaryBillPrintWhilenormalUser = clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.PrintBillwhileLoginwithnormaluser) == "1" ? true : false;
                 this.btnRemove.Enabled = false;
             }
-            if (this.ApplyGeneralDiscount)
-            {
-                var value = clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.DiscountPercentage);
-                this.GeneralDiscountPercentage = value != string.Empty ? Convert.ToInt32(value) : 0;
-                txtManualDiscount.Text = this.GeneralDiscountPercentage.ToString("0.00");
-            }
-            else
-                this.GeneralDiscountPercentage = 0;
+
             if (this.ServiceTaxEnabled)
             {
                 this.ServiceTaxPercentage = Convert.ToInt64(clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.ServiceTaxPercentage));
-                txtServiceTaxPercentage.Text = this.ServiceTaxPercentage.ToString();
+                lblVat.Text = this.ServiceTaxPercentage.ToString();
             }
             else
             {
                 this.ServiceTaxPercentage = 0;
-                txtServiceTaxPercentage.Text = "0.00";
+                lblVat.Text = "0.00";
             }
             this.AdditionalTaxPercentage = Convert.ToInt64(clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.AdditionalTaxPercentage));
-            txtAdditionalPercentage.Text = this.AdditionalTaxPercentage.ToString();
+            lblAddTax.Text = this.AdditionalTaxPercentage.ToString();
 
             txtBillSeries.Text = clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.BillSeries) + String.Format("{0}/{1}/{2}", "SALE", DateTime.Now.Year, DateTime.Now.Month);
             //clearControls();
 
-            if (!clsBStockBalance.IsOpeningExists(DateTime.Now) && clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.ManageInventory) == "1")
+            if (!clsBStockBalance.IsOpeningExists(DateTime.Now))
             {
                 MessageBox.Show("You cannot do transaction without Start Day Transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.BeginInvoke(new MethodInvoker(this.Close));
@@ -111,19 +105,20 @@ namespace POS
             itemlist = new List<ItemMasterDTO>();
             itemlist = clsBItemMaster.GetItemsForBilling();
         }
-        private void BindParty()
-        {
-            var res = clsBCodeMaster.GetAllRecordsList("PARTY");
-            ddlParty.DisplayMember = "Name";
-            ddlParty.ValueMember = "ID";
-            ddlParty.DataSource = res;
-        }
+ 
         private void BindCustomer()
         {
-            var res = clsBCustomerMaster.GetAllRecordsList();
+            CustomerList = clsBCustomerMaster.GetAllRecordsList();
             ddlCustomer.DisplayMember = "CustomerName";
             ddlCustomer.ValueMember = "CustomerId";
-            ddlCustomer.DataSource = res;
+            ddlCustomer.DataSource = CustomerList;
+        }
+        private void BindNarration()
+        {
+            var res = clsBNarration.GetAllRecordsList();
+            ddlNarration.DisplayMember = "Narration";
+            ddlNarration.ValueMember = "NarrationId";
+            ddlNarration.DataSource = res;
         }
         private void BindBillType()
         {
@@ -139,15 +134,10 @@ namespace POS
             ddlBillTypeId.DisplayMember = "BillTypeName";
             ddlBillTypeId.ValueMember = "BillTypeId";
             ddlBillTypeId.DataSource = lst;
+
         }
 
-        public void BindTable()
-        {
-            var res = clsBCodeMaster.GetAllRecordsList("TB");
-            ddlTableNo.DisplayMember = "Name";
-            ddlTableNo.ValueMember = "ID";
-            ddlTableNo.DataSource = res;
-        }
+
         private void MakeSerieal()
         {
             if (grdBill.Rows.Count > 1)
@@ -165,21 +155,6 @@ namespace POS
         }
 
 
-        private void txtCashReceived_KeyUp(object sender, KeyEventArgs e)
-        {
-            decimal netAmount = Convert.ToDecimal(txtNetAmount.Text);
-            decimal cashreceived = Convert.ToDecimal(txtCashReceived.Text.Trim() == "" ? "0" : txtCashReceived.Text.Trim());
-            if (netAmount > cashreceived)
-            {
-                txtRoundOffAmount.Text = (netAmount - cashreceived).GetDecimalString();
-                txtChange.Text = "0.00";
-            }
-            else
-            {
-                txtChange.Text = (netAmount - cashreceived).GetDecimalString();
-                txtRoundOffAmount.Text = "0.00";
-            }
-        }
 
         public void enterOnlyNumber(object sender, KeyPressEventArgs e)
         {
@@ -209,16 +184,15 @@ namespace POS
         {
             GetNextInvoideNumber();
             txtBillSeries.Text = clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.BillSeries) + String.Format("{0}/{1}/{2}", "SALE", DateTime.Now.Year, DateTime.Now.Month);
-            txtInvoiceDate.Text = DateTime.Now.Date.GetShortDateString();
+            dtInvoiceDate.Value = DateTime.Now.Date;
             grdBill.Rows.Clear();
-            ddlTableNo.SelectedIndex = 0;
+            ddlNarration.SelectedIndex = 0;
+            txtChallanNo.Text = string.Empty;
             txtQuantity.Text = "0";
-            txtCashReceived.Text = "0.00";
-            txtDiscount.Text = "0.00";
+            lblAddTax.Text = "1%";
+            lblVat.Text = "4%";
             txtServiceTax.Text = "0.00";
             txtAdditionalTax.Text = "0.00";
-            txtDiscountReason.Text = string.Empty;
-            txtChange.Text = "0.00";
             txtGrossAmount.Text = "0.00";
             txtRoundOffAmount.Text = "0.00";
             txtNetAmount.Text = "0.00";
@@ -259,17 +233,18 @@ namespace POS
             objMaster.Series = txtBillSeries.Text;
             objMaster.Rnumber = Convert.ToInt32(txtBillNumber.Text);
             objMaster.InvoiceDate = DateTime.Now;
-            objMaster.Party = txtName.Text;
-            objMaster.PaymentMode = ddlParty.SelectedValue.ToString();
+
+            
             objMaster.CustomerId = Convert.ToInt32(ddlCustomer.SelectedValue);
-            objMaster.TableID = Convert.ToInt32(ddlTableNo.SelectedValue);
+
             //objMaster.KotIDs = this.kotIDs;
             objMaster.IsDeleted = false;
             objMaster.GrossAmount = Convert.ToDecimal(txtGrossAmount.Text == "" ? "0" : txtGrossAmount.Text);
             objMaster.NetAmount = Convert.ToDecimal(txtNetAmount.Text == "" ? "0" : txtNetAmount.Text);
-            objMaster.CashReceived = Convert.ToDecimal(txtCashReceived.Text == "" ? "0" : txtCashReceived.Text);
-            objMaster.RoundOff = Convert.ToDecimal(txtRoundOffAmount.Text == "" ? "0" : txtRoundOffAmount.Text);
 
+            objMaster.RoundOff = Convert.ToDecimal(txtRoundOffAmount.Text == "" ? "0" : txtRoundOffAmount.Text);
+            objMaster.NarrationId = Convert.ToInt32(ddlNarration.SelectedValue);
+            objMaster.ChallanNo = txtChallanNo.Text.Trim();
             foreach (DataGridViewRow item in grdBill.Rows)
             {
                 if (item.Cells["ItemID"] != null && item.Cells["Code"].Value != null)
@@ -288,26 +263,15 @@ namespace POS
                     objMaster.details.Add(detitem);
                 }
             }
-            if (this.ApplyGeneralDiscount)
-            {
-                objMaster.DiscountPercentage = Convert.ToDecimal(txtManualDiscount.Text);
-                objMaster.Discount = Convert.ToDecimal(txtDiscount.Text);
-                objMaster.DiscountReason = txtDiscountReason.Text.Trim();
-            }
-            else
-            {
-                objMaster.DiscountPercentage = 0;
-                objMaster.Discount = 0;
-                objMaster.DiscountReason = "";
-            }
+
             if (this.ServiceTaxEnabled)
             {
                 objMaster.Tax = Convert.ToDecimal(txtServiceTax.Text);
             }
             if (Convert.ToDecimal(txtAdditionalTax.Text) > 0)
                 objMaster.AdditionalTax = Convert.ToDecimal(txtAdditionalTax.Text);
-            if (Convert.ToDecimal(txtAdditionalPercentage.Text) > 0)
-                objMaster.AdditionalPercentage = Convert.ToDecimal(txtAdditionalPercentage.Text);
+            if (Convert.ToDecimal(lblAddTax.Text) > 0)
+                objMaster.AdditionalPercentage = Convert.ToDecimal(lblAddTax.Text);
             objMaster.NoOfItems = objMaster.details.Count;
             objMaster.BillTypeId = Convert.ToInt32(ddlBillTypeId.SelectedValue);
             int res = 0;
@@ -345,12 +309,13 @@ namespace POS
             clearControls();
             txtBillSeries.Text = obj.Series;
             txtBillNumber.Text = obj.Rnumber.ToString();
-            txtInvoiceDate.Text = obj.InvoiceDate.GetShortDateString();
-            ddlParty.SelectedText = obj.Party;
+            dtInvoiceDate.Value =  obj.InvoiceDate;//.GetShortDateString();
+            
             ddlCustomer.SelectedValue = obj.CustomerId;
             ddlBillTypeId.SelectedValue = obj.BillTypeId;
-            txtName.Text = obj.Party;
-            ddlTableNo.SelectedValue = obj.TableID;
+            ddlNarration.SelectedValue = obj.NarrationId;
+            txtChallanNo.Text = obj.ChallanNo;
+
             int srno = 1;
             foreach (var detail in obj.details)
             {
@@ -358,14 +323,14 @@ namespace POS
                 srno++;
             }
             txtGrossAmount.Text = obj.GrossAmount.GetDecimalString();
-            txtDiscount.Text = obj.Discount.GetDecimalString();
+
             txtServiceTax.Text = obj.Tax.HasValue ? obj.Tax.Value.GetDecimalString() : "0.00";
             txtAdditionalTax.Text = obj.AdditionalTax.HasValue ? obj.AdditionalTax.Value.GetDecimalString() : "0.00";
             txtNetAmount.Text = obj.NetAmount.GetDecimalString();
-            txtCashReceived.Text = obj.CashReceived.GetDecimalString();
+
             txtRoundOffAmount.Text = obj.RoundOff.GetDecimalString();
-            txtDiscountReason.Text = obj.DiscountReason;
-            txtManualDiscount.Text = obj.DiscountPercentage.GetDecimalString();
+
+
             //txtServiceTaxPercentage.Text = obj.taxper.HasValue ? obj.Tax.Value.GetDecimalString() : "0.00";
             //chkIsPrinted.Checked = obj.IsPrinted;
             if (obj.IsPrinted)
@@ -553,17 +518,14 @@ namespace POS
                     }
                 }
             }
-            txtGrossAmount.Text = totalGross.ToString("0.00");
-            totalDiscount = totalGross * Convert.ToDecimal(txtManualDiscount.Text.Trim() == "" ? "0" : txtManualDiscount.Text.Trim()) / 100;
-            txtDiscount.Text = totalDiscount.ToString("0.00");
 
             if (Convert.ToInt32(ddlBillTypeId.SelectedValue) == 1)
             {
-                totalServicetax = (totalGross - totalDiscount) * Convert.ToDecimal(txtServiceTaxPercentage.Text.Trim() == "" ? "0" : txtServiceTaxPercentage.Text.Trim()) / 100;
+                totalServicetax = (totalGross - totalDiscount) * Convert.ToDecimal(lblVat.Text.Trim() == "" ? "0" : lblVat.Text.Trim()) / 100;
                 txtServiceTax.Text = totalServicetax.ToString("0.00");
 
 
-                totalAdditionalTax = (totalGross - totalDiscount) * Convert.ToDecimal(txtAdditionalPercentage.Text.Trim() == "" ? "0" : txtAdditionalPercentage.Text.Trim()) / 100;
+                totalAdditionalTax = (totalGross - totalDiscount) * Convert.ToDecimal(lblAddTax.Text.Trim() == "" ? "0" : lblAddTax.Text.Trim()) / 100;
                 txtAdditionalTax.Text = totalAdditionalTax.ToString("0.00");
             }
             else
@@ -575,7 +537,7 @@ namespace POS
             txtNetAmount.Text = totalNetAmount.ToString("0.00");
 
             txtQuantity.Text = qty.ToString();
-            txtCashReceived.Text = totalNetAmount.ToString("0.00");
+
 
         }
 
@@ -622,7 +584,12 @@ namespace POS
                 col.AddRange(res);
             }
         }
+        public void addCustomers(AutoCompleteStringCollection col)
+        {
+            string[] res = CustomerList.Select(x => x.CustomerName).ToArray();
+            col.AddRange(res);
 
+        }
 
 
 
@@ -711,36 +678,45 @@ namespace POS
         {
             if (Convert.ToInt32(ddlBillTypeId.SelectedValue) == 1)
             {
-                lblAdditionalTax.Visible = lblServiceTax.Visible = txtAdditionalTax.Visible = txtServiceTax.Visible = true;
-
-                if (this.ServiceTaxEnabled)
-                {
-                    this.ServiceTaxPercentage = Convert.ToInt64(clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.ServiceTaxPercentage));
-                    txtServiceTaxPercentage.Text = this.ServiceTaxPercentage.ToString();
-
-                    this.AdditionalTaxPercentage = Convert.ToInt64(clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.AdditionalTaxPercentage));
-                    txtAdditionalPercentage.Text = this.AdditionalTaxPercentage.ToString();
-                }
-                else
-                {
-                    this.ServiceTaxPercentage = 0;
-                    txtServiceTaxPercentage.Text = "0.00";
-                    this.AdditionalTaxPercentage = 0;
-                    txtAdditionalPercentage.Text = "0.00";
-                }
-
+                CalculateDetails();
+                lblAdditionalTax.Visible = lblServiceTax.Visible = txtAdditionalTax.Visible = txtServiceTax.Visible = lblVat.Visible = label1.Visible = lblAddTax.Visible = label8.Visible= true;
             }
             else if (Convert.ToInt32(ddlBillTypeId.SelectedValue) == 2)
+                lblAdditionalTax.Visible = lblServiceTax.Visible = txtAdditionalTax.Visible = txtServiceTax.Visible = lblVat.Visible = label1.Visible = lblAddTax.Visible = label8.Visible = false;
+        }
+
+        private void txtCustomer_KeyUp(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void txtCustomer_TextChanged(object sender, EventArgs e)
+        {
+            TextBox autoText = sender as TextBox;
+            if (autoText != null)
             {
-                lblAdditionalTax.Visible = lblServiceTax.Visible = txtAdditionalTax.Visible = txtServiceTax.Visible = false;
-                txtServiceTaxPercentage.Text = "0.00";
-                txtAdditionalPercentage.Text = "0.00";
-                this.ServiceTaxPercentage = 0;
-                this.AdditionalTaxPercentage = 0;
+                autoText.AutoCompleteMode = AutoCompleteMode.Suggest;
+                autoText.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                AutoCompleteStringCollection DataCollection = new AutoCompleteStringCollection();
+                addCustomers(DataCollection);
+                autoText.AutoCompleteCustomSource = DataCollection;
             }
-            CalculateDetails();
+            ddlCustomer.SelectedText = txtCustomer.Text;
+            int index = ddlCustomer.FindString(txtCustomer.Text);
+            ddlCustomer.SelectedIndex = index;
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
     }
     public class BillTypeDTO
     {

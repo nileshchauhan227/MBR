@@ -49,11 +49,13 @@
     <Compile Include="CompanyMasterDTO.cs" />
     <Compile Include="ConfigurationDTO.cs" />
     <Compile Include="CustomerDTO.cs" />
+    <Compile Include="CustomerMappingDTO.cs" />
     <Compile Include="Interface\IManageCrudOperation.cs" />
     <Compile Include="Interface\IManageNextPreFirstLast.cs" />
     <Compile Include="ItemMasterDTO.cs" />
     <Compile Include="KOTDetailDTO.cs" />
     <Compile Include="KOTMasterDTO.cs" />
+    <Compile Include="NarrationDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PurchaseDetailDTO.cs" />
     <Compile Include="PurchaseMasterDTO.cs" />

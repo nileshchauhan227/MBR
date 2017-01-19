@@ -47,11 +47,13 @@
     <Compile Include="clsBCodeTypeMaster.cs" />
     <Compile Include="clsBCompanyMaster.cs" />
     <Compile Include="clsBConfiguration.cs" />
+    <Compile Include="clsBCustomerMapping.cs" />
     <Compile Include="clsBCustomerMaster.cs" />
     <Compile Include="clsBDatabase.cs" />
     <Compile Include="clsBInward.cs" />
     <Compile Include="clsBItemMaster.cs" />
     <Compile Include="clsBKOT.cs" />
+    <Compile Include="clsBNarration.cs" />
     <Compile Include="clsBPurchaseReturn.cs" />
     <Compile Include="clsBReports.cs" />
     <Compile Include="clsBStockBalance.cs" />

@@ -38,3 +38,4 @@ E:\Projects\MBRFashionStudio\Trunk\POS_DEP\bin\Debug\POS_Reports.pdb
 E:\Projects\MBRFashionStudio\Trunk\POS_DEP\bin\Debug\POS.DAL.pdb
 E:\Projects\MBRFashionStudio\Trunk\POS_DEP\obj\x86\Debug\POS.exe
 E:\Projects\MBRFashionStudio\Trunk\POS_DEP\obj\x86\Debug\POS.pdb
+E:\Projects\MBRFashionStudio\Trunk\POS_DEP\obj\x86\Debug\POS.frmCustomerMapping.resources

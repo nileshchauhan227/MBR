@@ -87,6 +87,12 @@
     <Compile Include="CompanySetup.Designer.cs">
       <DependentUpon>CompanySetup.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCustomerMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerMapping.Designer.cs">
+      <DependentUpon>frmCustomerMapping.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCustomerMaster.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </Compile>
     <EmbeddedResource Include="CompanySetup.resx">
       <DependentUpon>CompanySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerMapping.resx">
+      <DependentUpon>frmCustomerMapping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerMaster.resx">
       <DependentUpon>frmCustomerMaster.cs</DependentUpon>

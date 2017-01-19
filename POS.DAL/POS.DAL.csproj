@@ -67,6 +67,7 @@
     <Compile Include="clsDCodeTypeMaster.cs" />
     <Compile Include="clsDCompanyMaster.cs" />
     <Compile Include="clsDConfiguration.cs" />
+    <Compile Include="clsDCustomerMapping.cs" />
     <Compile Include="clsDCustomerMaster.cs" />
     <Compile Include="clsDDatabase.cs" />
     <Compile Include="clsDInward.cs" />

@@ -38,7 +38,8 @@ namespace POS.DTO
 
         public string Series { get; set; }
         public List<int> KotIDs { get; set; }
-
+        public int NarrationId { get; set; }
+        public string ChallanNo { get; set; }
         public string TableName { get; set; }
 
         public string BillNumber
