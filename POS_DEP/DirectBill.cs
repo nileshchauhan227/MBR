@@ -93,8 +93,8 @@ namespace POS
 
             txtBillSeries.Text = clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.BillSeries) + String.Format("{0}/{1}/{2}", "SALE", DateTime.Now.Year, DateTime.Now.Month);
             //clearControls();
-
-            if (!clsBStockBalance.IsOpeningExists(DateTime.Now))
+            IsManageInventory = clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.ManageInventory) == "1";
+            if (!clsBStockBalance.IsOpeningExists(DateTime.Now) && IsManageInventory)
             {
                 MessageBox.Show("You cannot do transaction without Start Day Transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.BeginInvoke(new MethodInvoker(this.Close));
@@ -103,9 +103,9 @@ namespace POS
         public void FillItemList()
         {
             itemlist = new List<ItemMasterDTO>();
-            itemlist = clsBItemMaster.GetItemsForBilling();
+            itemlist = clsBItemMaster.GetItemsForCustomer();
         }
- 
+
         private void BindCustomer()
         {
             CustomerList = clsBCustomerMaster.GetAllRecordsList();
@@ -189,8 +189,8 @@ namespace POS
             ddlNarration.SelectedIndex = 0;
             txtChallanNo.Text = string.Empty;
             txtQuantity.Text = "0";
-            lblAddTax.Text = "1%";
-            lblVat.Text = "4%";
+            lblAddTax.Text = "1";
+            lblVat.Text = "4";
             txtServiceTax.Text = "0.00";
             txtAdditionalTax.Text = "0.00";
             txtGrossAmount.Text = "0.00";
@@ -234,7 +234,7 @@ namespace POS
             objMaster.Rnumber = Convert.ToInt32(txtBillNumber.Text);
             objMaster.InvoiceDate = DateTime.Now;
 
-            
+
             objMaster.CustomerId = Convert.ToInt32(ddlCustomer.SelectedValue);
 
             //objMaster.KotIDs = this.kotIDs;
@@ -288,6 +288,7 @@ namespace POS
 
                 //this.kotIDs.Clear();
                 //BindRunningKOT();
+                this.InvoiceID = 0;
                 clearControls();
             }
         }
@@ -309,8 +310,8 @@ namespace POS
             clearControls();
             txtBillSeries.Text = obj.Series;
             txtBillNumber.Text = obj.Rnumber.ToString();
-            dtInvoiceDate.Value =  obj.InvoiceDate;//.GetShortDateString();
-            
+            dtInvoiceDate.Value = obj.InvoiceDate;//.GetShortDateString();
+
             ddlCustomer.SelectedValue = obj.CustomerId;
             ddlBillTypeId.SelectedValue = obj.BillTypeId;
             ddlNarration.SelectedValue = obj.NarrationId;
@@ -442,11 +443,11 @@ namespace POS
 
                 if (e.ColumnIndex == 1 && grdBill.CurrentRow.Cells["Code"].Value != null)
                 {
-                    item = itemlist.FirstOrDefault(x => x.ItemCode.ToUpper() == grdBill.CurrentRow.Cells["Code"].Value.ToString().ToUpper());// clsBItemMaster.GetItemByCode(grdBill.CurrentRow.Cells[1].Value.ToString());
+                    item = itemlist.FirstOrDefault(x => x.ItemCode.ToUpper() == grdBill.CurrentRow.Cells["Code"].Value.ToString().ToUpper() && x.CustomerId == Convert.ToInt32(ddlCustomer.SelectedValue));
                 }
                 else if (e.ColumnIndex == 2 && grdBill.CurrentRow.Cells["Name"].Value != null)
                 {
-                    item = itemlist.FirstOrDefault(x => x.ItemName.ToUpper() == grdBill.CurrentRow.Cells["Name"].Value.ToString().ToUpper());
+                    item = itemlist.FirstOrDefault(x => x.ItemName.ToUpper() == grdBill.CurrentRow.Cells["Name"].Value.ToString().ToUpper() && x.CustomerId == Convert.ToInt32(ddlCustomer.SelectedValue));
                 }
                 else if (e.ColumnIndex == 3 && grdBill.CurrentRow.Cells["Quantity"].Value != null)
                 {
@@ -534,11 +535,10 @@ namespace POS
                 txtAdditionalTax.Text = totalAdditionalTax.ToString("0.00");
             }
             totalNetAmount = totalGross - totalDiscount + totalServicetax + totalAdditionalTax;
-            txtNetAmount.Text = totalNetAmount.ToString("0.00");
-
+            txtNetAmount.Text = Math.Round(totalNetAmount, 0, MidpointRounding.AwayFromZero).GetDecimalString();
+            txtGrossAmount.Text = totalGross.GetDecimalString();
             txtQuantity.Text = qty.ToString();
-
-
+            txtRoundOffAmount.Text = (Math.Round(totalNetAmount, 0, MidpointRounding.AwayFromZero) - totalNetAmount).GetDecimalString();
         }
 
         private void grdBill_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -575,12 +575,12 @@ namespace POS
         {
             if (id == 1)
             {
-                string[] res = itemlist.Select(x => x.ItemName).ToArray();
+                string[] res = itemlist.Where(x => x.CustomerId == Convert.ToInt32(ddlCustomer.SelectedValue)).Select(x => x.ItemName).ToArray();
                 col.AddRange(res);
             }
             else
             {
-                string[] res = itemlist.Select(x => x.ItemCode).ToArray();
+                string[] res = itemlist.Where(x => x.CustomerId == Convert.ToInt32(ddlCustomer.SelectedValue)).Select(x => x.ItemCode).ToArray();
                 col.AddRange(res);
             }
         }
@@ -618,7 +618,7 @@ namespace POS
                 int iRow = grdBill.CurrentCell.RowIndex;
                 if (iColumn == 1)
                 {
-                    grdBill.CurrentCell = grdBill[2, iRow - 1];
+                    grdBill.CurrentCell = grdBill[4, iRow - 1];
                 }
                 else if (iColumn == 2)
                 {
@@ -626,10 +626,22 @@ namespace POS
                 }
                 else if (iColumn == 4)
                 {
-                    grdBill.CurrentCell = grdBill[5, iRow - 1];
-                }
-                if (iColumn == 5)
                     grdBill.CurrentCell = grdBill[1, iRow];
+                }
+                //if (iColumn == 5
+                //    grdBill.CurrentCell = grdBill[1, iRow];
+            }
+            else if (e.KeyCode == Keys.Delete)
+            {
+                try
+                {
+                    grdBill.Rows.RemoveAt(grdBill.CurrentCell.RowIndex);
+                    CalculateDetails();
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
@@ -679,7 +691,7 @@ namespace POS
             if (Convert.ToInt32(ddlBillTypeId.SelectedValue) == 1)
             {
                 CalculateDetails();
-                lblAdditionalTax.Visible = lblServiceTax.Visible = txtAdditionalTax.Visible = txtServiceTax.Visible = lblVat.Visible = label1.Visible = lblAddTax.Visible = label8.Visible= true;
+                lblAdditionalTax.Visible = lblServiceTax.Visible = txtAdditionalTax.Visible = txtServiceTax.Visible = lblVat.Visible = label1.Visible = lblAddTax.Visible = label8.Visible = true;
             }
             else if (Convert.ToInt32(ddlBillTypeId.SelectedValue) == 2)
                 lblAdditionalTax.Visible = lblServiceTax.Visible = txtAdditionalTax.Visible = txtServiceTax.Visible = lblVat.Visible = label1.Visible = lblAddTax.Visible = label8.Visible = false;
@@ -687,7 +699,7 @@ namespace POS
 
         private void txtCustomer_KeyUp(object sender, KeyEventArgs e)
         {
-          
+
         }
 
         private void txtCustomer_TextChanged(object sender, EventArgs e)

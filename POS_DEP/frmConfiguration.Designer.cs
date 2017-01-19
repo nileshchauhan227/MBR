@@ -70,6 +70,9 @@
             this.rdoDiscountNotApplied = new System.Windows.Forms.RadioButton();
             this.rdoDiscountApplied = new System.Windows.Forms.RadioButton();
             this.pnlGeneral = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lblAdditionalTax = new System.Windows.Forms.Label();
+            this.txtAdditionalTax = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.radioButton9 = new System.Windows.Forms.RadioButton();
@@ -91,9 +94,6 @@
             this.rdoLWNUNoCompulsaryPrint = new System.Windows.Forms.RadioButton();
             this.rdoLWNUCompulsaryPrint = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblAdditionalTax = new System.Windows.Forms.Label();
-            this.txtAdditionalTax = new System.Windows.Forms.TextBox();
             this.pnlbillPrintOption.SuspendLayout();
             this.pnlKOTPrintOption.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -131,10 +131,9 @@
             this.txtDiscount.Location = new System.Drawing.Point(131, 17);
             this.txtDiscount.MaxLength = 2;
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDiscount.Size = new System.Drawing.Size(67, 23);
-            this.txtDiscount.TabIndex = 22;
-            this.txtDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enterOnlyNumber);
+            this.txtDiscount.TabIndex = 240;
+            this.txtDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // ddlKOTPrinter
             // 
@@ -143,7 +142,7 @@
             this.ddlKOTPrinter.Location = new System.Drawing.Point(186, 40);
             this.ddlKOTPrinter.Name = "ddlKOTPrinter";
             this.ddlKOTPrinter.Size = new System.Drawing.Size(145, 24);
-            this.ddlKOTPrinter.TabIndex = 8;
+            this.ddlKOTPrinter.TabIndex = 70;
             this.ddlKOTPrinter.Visible = false;
             // 
             // pnlbillPrintOption
@@ -166,7 +165,7 @@
             this.rdoBPONoCompusaryPrint.Location = new System.Drawing.Point(171, 19);
             this.rdoBPONoCompusaryPrint.Name = "rdoBPONoCompusaryPrint";
             this.rdoBPONoCompusaryPrint.Size = new System.Drawing.Size(155, 21);
-            this.rdoBPONoCompusaryPrint.TabIndex = 3;
+            this.rdoBPONoCompusaryPrint.TabIndex = 20;
             this.rdoBPONoCompusaryPrint.TabStop = true;
             this.rdoBPONoCompusaryPrint.Text = "No Compulsary Print";
             this.rdoBPONoCompusaryPrint.UseVisualStyleBackColor = true;
@@ -177,7 +176,7 @@
             this.rdoBPOCompusaryPrint.Location = new System.Drawing.Point(10, 20);
             this.rdoBPOCompusaryPrint.Name = "rdoBPOCompusaryPrint";
             this.rdoBPOCompusaryPrint.Size = new System.Drawing.Size(133, 21);
-            this.rdoBPOCompusaryPrint.TabIndex = 2;
+            this.rdoBPOCompusaryPrint.TabIndex = 10;
             this.rdoBPOCompusaryPrint.TabStop = true;
             this.rdoBPOCompusaryPrint.Text = "Compulsary Print";
             this.rdoBPOCompusaryPrint.UseVisualStyleBackColor = true;
@@ -202,7 +201,7 @@
             this.rdoKPONoCompulsaryPrint.Location = new System.Drawing.Point(171, 22);
             this.rdoKPONoCompulsaryPrint.Name = "rdoKPONoCompulsaryPrint";
             this.rdoKPONoCompulsaryPrint.Size = new System.Drawing.Size(155, 21);
-            this.rdoKPONoCompulsaryPrint.TabIndex = 5;
+            this.rdoKPONoCompulsaryPrint.TabIndex = 40;
             this.rdoKPONoCompulsaryPrint.Text = "No Compulsary Print";
             this.rdoKPONoCompulsaryPrint.UseVisualStyleBackColor = true;
             // 
@@ -213,7 +212,7 @@
             this.rdoKPOCompulsaryPrint.Location = new System.Drawing.Point(10, 22);
             this.rdoKPOCompulsaryPrint.Name = "rdoKPOCompulsaryPrint";
             this.rdoKPOCompulsaryPrint.Size = new System.Drawing.Size(133, 21);
-            this.rdoKPOCompulsaryPrint.TabIndex = 4;
+            this.rdoKPOCompulsaryPrint.TabIndex = 30;
             this.rdoKPOCompulsaryPrint.TabStop = true;
             this.rdoKPOCompulsaryPrint.Text = "Compulsary Print";
             this.rdoKPOCompulsaryPrint.UseVisualStyleBackColor = true;
@@ -286,7 +285,7 @@
             this.dtToDate.Location = new System.Drawing.Point(108, 66);
             this.dtToDate.Name = "dtToDate";
             this.dtToDate.Size = new System.Drawing.Size(153, 23);
-            this.dtToDate.TabIndex = 28;
+            this.dtToDate.TabIndex = 100;
             // 
             // dtFromDate
             // 
@@ -296,7 +295,7 @@
             this.dtFromDate.Location = new System.Drawing.Point(108, 31);
             this.dtFromDate.Name = "dtFromDate";
             this.dtFromDate.Size = new System.Drawing.Size(153, 23);
-            this.dtFromDate.TabIndex = 27;
+            this.dtFromDate.TabIndex = 90;
             // 
             // label8
             // 
@@ -341,7 +340,7 @@
             this.rdoGroupWiseKOTPrintOff.Location = new System.Drawing.Point(85, 19);
             this.rdoGroupWiseKOTPrintOff.Name = "rdoGroupWiseKOTPrintOff";
             this.rdoGroupWiseKOTPrintOff.Size = new System.Drawing.Size(45, 21);
-            this.rdoGroupWiseKOTPrintOff.TabIndex = 15;
+            this.rdoGroupWiseKOTPrintOff.TabIndex = 180;
             this.rdoGroupWiseKOTPrintOff.TabStop = true;
             this.rdoGroupWiseKOTPrintOff.Text = "Off";
             this.rdoGroupWiseKOTPrintOff.UseVisualStyleBackColor = true;
@@ -352,7 +351,7 @@
             this.rdoGroupWiseKOTPrintOn.Location = new System.Drawing.Point(10, 20);
             this.rdoGroupWiseKOTPrintOn.Name = "rdoGroupWiseKOTPrintOn";
             this.rdoGroupWiseKOTPrintOn.Size = new System.Drawing.Size(45, 21);
-            this.rdoGroupWiseKOTPrintOn.TabIndex = 14;
+            this.rdoGroupWiseKOTPrintOn.TabIndex = 170;
             this.rdoGroupWiseKOTPrintOn.TabStop = true;
             this.rdoGroupWiseKOTPrintOn.Text = "On";
             this.rdoGroupWiseKOTPrintOn.UseVisualStyleBackColor = true;
@@ -362,7 +361,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(590, 393);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.TabIndex = 290;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -372,7 +371,7 @@
             this.btnCancel.Location = new System.Drawing.Point(500, 393);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 24;
+            this.btnCancel.TabIndex = 280;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -383,7 +382,7 @@
             this.btnOK.Location = new System.Drawing.Point(401, 393);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 23;
+            this.btnOK.TabIndex = 270;
             this.btnOK.Text = "&OK";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnSave_Click);
@@ -408,7 +407,7 @@
             this.rdoAutoCutterOff.Location = new System.Drawing.Point(85, 19);
             this.rdoAutoCutterOff.Name = "rdoAutoCutterOff";
             this.rdoAutoCutterOff.Size = new System.Drawing.Size(45, 21);
-            this.rdoAutoCutterOff.TabIndex = 15;
+            this.rdoAutoCutterOff.TabIndex = 160;
             this.rdoAutoCutterOff.TabStop = true;
             this.rdoAutoCutterOff.Text = "Off";
             this.rdoAutoCutterOff.UseVisualStyleBackColor = true;
@@ -419,7 +418,7 @@
             this.rdoAutoCutterOn.Location = new System.Drawing.Point(10, 20);
             this.rdoAutoCutterOn.Name = "rdoAutoCutterOn";
             this.rdoAutoCutterOn.Size = new System.Drawing.Size(45, 21);
-            this.rdoAutoCutterOn.TabIndex = 14;
+            this.rdoAutoCutterOn.TabIndex = 150;
             this.rdoAutoCutterOn.TabStop = true;
             this.rdoAutoCutterOn.Text = "On";
             this.rdoAutoCutterOn.UseVisualStyleBackColor = true;
@@ -445,7 +444,7 @@
             this.rdoVATIncludedNo.Location = new System.Drawing.Point(85, 19);
             this.rdoVATIncludedNo.Name = "rdoVATIncludedNo";
             this.rdoVATIncludedNo.Size = new System.Drawing.Size(46, 21);
-            this.rdoVATIncludedNo.TabIndex = 21;
+            this.rdoVATIncludedNo.TabIndex = 230;
             this.rdoVATIncludedNo.TabStop = true;
             this.rdoVATIncludedNo.Text = "No";
             this.rdoVATIncludedNo.UseVisualStyleBackColor = true;
@@ -457,7 +456,7 @@
             this.rdoVATIncludedYes.Location = new System.Drawing.Point(10, 20);
             this.rdoVATIncludedYes.Name = "rdoVATIncludedYes";
             this.rdoVATIncludedYes.Size = new System.Drawing.Size(53, 21);
-            this.rdoVATIncludedYes.TabIndex = 20;
+            this.rdoVATIncludedYes.TabIndex = 220;
             this.rdoVATIncludedYes.TabStop = true;
             this.rdoVATIncludedYes.Text = "Yes";
             this.rdoVATIncludedYes.UseVisualStyleBackColor = true;
@@ -483,7 +482,7 @@
             this.rdoKOTNotCompulsaryApplied.Location = new System.Drawing.Point(85, 19);
             this.rdoKOTNotCompulsaryApplied.Name = "rdoKOTNotCompulsaryApplied";
             this.rdoKOTNotCompulsaryApplied.Size = new System.Drawing.Size(99, 21);
-            this.rdoKOTNotCompulsaryApplied.TabIndex = 19;
+            this.rdoKOTNotCompulsaryApplied.TabIndex = 210;
             this.rdoKOTNotCompulsaryApplied.TabStop = true;
             this.rdoKOTNotCompulsaryApplied.Text = "Not Applied";
             this.rdoKOTNotCompulsaryApplied.UseVisualStyleBackColor = true;
@@ -494,7 +493,7 @@
             this.rdoKOTCompulsaryApplied.Location = new System.Drawing.Point(10, 20);
             this.rdoKOTCompulsaryApplied.Name = "rdoKOTCompulsaryApplied";
             this.rdoKOTCompulsaryApplied.Size = new System.Drawing.Size(73, 21);
-            this.rdoKOTCompulsaryApplied.TabIndex = 18;
+            this.rdoKOTCompulsaryApplied.TabIndex = 200;
             this.rdoKOTCompulsaryApplied.TabStop = true;
             this.rdoKOTCompulsaryApplied.Text = "Applied";
             this.rdoKOTCompulsaryApplied.UseVisualStyleBackColor = true;
@@ -519,7 +518,7 @@
             this.rdoAutoLoginNotApplied.Location = new System.Drawing.Point(85, 19);
             this.rdoAutoLoginNotApplied.Name = "rdoAutoLoginNotApplied";
             this.rdoAutoLoginNotApplied.Size = new System.Drawing.Size(99, 21);
-            this.rdoAutoLoginNotApplied.TabIndex = 13;
+            this.rdoAutoLoginNotApplied.TabIndex = 140;
             this.rdoAutoLoginNotApplied.TabStop = true;
             this.rdoAutoLoginNotApplied.Text = "Not Applied";
             this.rdoAutoLoginNotApplied.UseVisualStyleBackColor = true;
@@ -530,7 +529,7 @@
             this.rdoAutoLoginApplied.Location = new System.Drawing.Point(10, 20);
             this.rdoAutoLoginApplied.Name = "rdoAutoLoginApplied";
             this.rdoAutoLoginApplied.Size = new System.Drawing.Size(73, 21);
-            this.rdoAutoLoginApplied.TabIndex = 12;
+            this.rdoAutoLoginApplied.TabIndex = 130;
             this.rdoAutoLoginApplied.TabStop = true;
             this.rdoAutoLoginApplied.Text = "Applied";
             this.rdoAutoLoginApplied.UseVisualStyleBackColor = true;
@@ -555,7 +554,7 @@
             this.rdoManualDiscountNotApplied.Location = new System.Drawing.Point(85, 19);
             this.rdoManualDiscountNotApplied.Name = "rdoManualDiscountNotApplied";
             this.rdoManualDiscountNotApplied.Size = new System.Drawing.Size(99, 21);
-            this.rdoManualDiscountNotApplied.TabIndex = 17;
+            this.rdoManualDiscountNotApplied.TabIndex = 190;
             this.rdoManualDiscountNotApplied.TabStop = true;
             this.rdoManualDiscountNotApplied.Text = "Not Applied";
             this.rdoManualDiscountNotApplied.UseVisualStyleBackColor = true;
@@ -566,7 +565,7 @@
             this.rdoManualDiscountApplied.Location = new System.Drawing.Point(10, 20);
             this.rdoManualDiscountApplied.Name = "rdoManualDiscountApplied";
             this.rdoManualDiscountApplied.Size = new System.Drawing.Size(73, 21);
-            this.rdoManualDiscountApplied.TabIndex = 16;
+            this.rdoManualDiscountApplied.TabIndex = 180;
             this.rdoManualDiscountApplied.TabStop = true;
             this.rdoManualDiscountApplied.Text = "Applied";
             this.rdoManualDiscountApplied.UseVisualStyleBackColor = true;
@@ -591,7 +590,7 @@
             this.rdoDiscountNotApplied.Location = new System.Drawing.Point(86, 19);
             this.rdoDiscountNotApplied.Name = "rdoDiscountNotApplied";
             this.rdoDiscountNotApplied.Size = new System.Drawing.Size(99, 21);
-            this.rdoDiscountNotApplied.TabIndex = 11;
+            this.rdoDiscountNotApplied.TabIndex = 120;
             this.rdoDiscountNotApplied.TabStop = true;
             this.rdoDiscountNotApplied.Text = "Not Applied";
             this.rdoDiscountNotApplied.UseVisualStyleBackColor = true;
@@ -602,7 +601,7 @@
             this.rdoDiscountApplied.Location = new System.Drawing.Point(10, 20);
             this.rdoDiscountApplied.Name = "rdoDiscountApplied";
             this.rdoDiscountApplied.Size = new System.Drawing.Size(73, 21);
-            this.rdoDiscountApplied.TabIndex = 10;
+            this.rdoDiscountApplied.TabIndex = 110;
             this.rdoDiscountApplied.TabStop = true;
             this.rdoDiscountApplied.Text = "Applied";
             this.rdoDiscountApplied.UseVisualStyleBackColor = true;
@@ -626,6 +625,37 @@
             this.pnlGeneral.Size = new System.Drawing.Size(218, 109);
             this.pnlGeneral.TabIndex = 29;
             this.pnlGeneral.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(200, 80);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 20);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "%";
+            // 
+            // lblAdditionalTax
+            // 
+            this.lblAdditionalTax.AutoSize = true;
+            this.lblAdditionalTax.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdditionalTax.Location = new System.Drawing.Point(28, 78);
+            this.lblAdditionalTax.Name = "lblAdditionalTax";
+            this.lblAdditionalTax.Size = new System.Drawing.Size(75, 20);
+            this.lblAdditionalTax.TabIndex = 34;
+            this.lblAdditionalTax.Text = "Add. Tax";
+            // 
+            // txtAdditionalTax
+            // 
+            this.txtAdditionalTax.BackColor = System.Drawing.Color.White;
+            this.txtAdditionalTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtAdditionalTax.Location = new System.Drawing.Point(131, 78);
+            this.txtAdditionalTax.MaxLength = 2;
+            this.txtAdditionalTax.Name = "txtAdditionalTax";
+            this.txtAdditionalTax.Size = new System.Drawing.Size(67, 23);
+            this.txtAdditionalTax.TabIndex = 260;
+            this.txtAdditionalTax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -700,10 +730,10 @@
             this.txtServiceTaxPercentage.Location = new System.Drawing.Point(131, 49);
             this.txtServiceTaxPercentage.MaxLength = 2;
             this.txtServiceTaxPercentage.Name = "txtServiceTaxPercentage";
-            this.txtServiceTaxPercentage.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtServiceTaxPercentage.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtServiceTaxPercentage.Size = new System.Drawing.Size(67, 23);
-            this.txtServiceTaxPercentage.TabIndex = 23;
-            this.txtServiceTaxPercentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enterOnlyNumber);
+            this.txtServiceTaxPercentage.TabIndex = 250;
+            this.txtServiceTaxPercentage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pnlDefaultPrinter
             // 
@@ -785,7 +815,7 @@
             this.ddlBillPrinter.Location = new System.Drawing.Point(186, 73);
             this.ddlBillPrinter.Name = "ddlBillPrinter";
             this.ddlBillPrinter.Size = new System.Drawing.Size(145, 24);
-            this.ddlBillPrinter.TabIndex = 9;
+            this.ddlBillPrinter.TabIndex = 80;
             // 
             // pnlPrintBillWhileLoginWithNoramlUser
             // 
@@ -844,7 +874,7 @@
             this.rdoLWNUNoCompulsaryPrint.Location = new System.Drawing.Point(171, 24);
             this.rdoLWNUNoCompulsaryPrint.Name = "rdoLWNUNoCompulsaryPrint";
             this.rdoLWNUNoCompulsaryPrint.Size = new System.Drawing.Size(155, 21);
-            this.rdoLWNUNoCompulsaryPrint.TabIndex = 7;
+            this.rdoLWNUNoCompulsaryPrint.TabIndex = 60;
             this.rdoLWNUNoCompulsaryPrint.TabStop = true;
             this.rdoLWNUNoCompulsaryPrint.Text = "No Compulsary Print";
             this.rdoLWNUNoCompulsaryPrint.UseVisualStyleBackColor = true;
@@ -855,7 +885,7 @@
             this.rdoLWNUCompulsaryPrint.Location = new System.Drawing.Point(10, 23);
             this.rdoLWNUCompulsaryPrint.Name = "rdoLWNUCompulsaryPrint";
             this.rdoLWNUCompulsaryPrint.Size = new System.Drawing.Size(133, 21);
-            this.rdoLWNUCompulsaryPrint.TabIndex = 6;
+            this.rdoLWNUCompulsaryPrint.TabIndex = 50;
             this.rdoLWNUCompulsaryPrint.TabStop = true;
             this.rdoLWNUCompulsaryPrint.Text = "Compulsary Print";
             this.rdoLWNUCompulsaryPrint.UseVisualStyleBackColor = true;
@@ -872,37 +902,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1263, 582);
             this.tableLayoutPanel1.TabIndex = 27;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(200, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(22, 20);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "%";
-            // 
-            // lblAdditionalTax
-            // 
-            this.lblAdditionalTax.AutoSize = true;
-            this.lblAdditionalTax.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdditionalTax.Location = new System.Drawing.Point(28, 78);
-            this.lblAdditionalTax.Name = "lblAdditionalTax";
-            this.lblAdditionalTax.Size = new System.Drawing.Size(75, 20);
-            this.lblAdditionalTax.TabIndex = 34;
-            this.lblAdditionalTax.Text = "Add. Tax";
-            // 
-            // txtAdditionalTax
-            // 
-            this.txtAdditionalTax.BackColor = System.Drawing.Color.White;
-            this.txtAdditionalTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtAdditionalTax.Location = new System.Drawing.Point(131, 78);
-            this.txtAdditionalTax.MaxLength = 2;
-            this.txtAdditionalTax.Name = "txtAdditionalTax";
-            this.txtAdditionalTax.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtAdditionalTax.Size = new System.Drawing.Size(67, 23);
-            this.txtAdditionalTax.TabIndex = 33;
             // 
             // frmConfiguration
             // 

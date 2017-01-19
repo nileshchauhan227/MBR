@@ -13,7 +13,7 @@ namespace POS.DTO
         public int GroupID { get; set; }
         public int UnitID { get; set; }
         public decimal? Discount { get; set; }
-        public decimal? Rate { get; set; }
+        public double? Rate { get; set; }
         public decimal? OtherDiscount { get; set; }
         public bool? IsActive { get; set; }
         public Boolean? ServiceTax { get; set; }
@@ -24,5 +24,7 @@ namespace POS.DTO
         public bool? IsUniqueSerialNumber { get; set; }
         public decimal? OpeningBalance { get; set; }
         public List<string> barcodes { get; set; }
+        public int CustomerId { get; set; }
+        
     }
 }

@@ -13,8 +13,8 @@ namespace POS
 {
     public partial class frmCustomerMaster : Form
     {
-         
-         #region Declartion and Page Events
+
+        #region Declartion and Page Events
         int CustomerId = 0;
         public frmCustomerMaster()
         {
@@ -22,7 +22,7 @@ namespace POS
             this.DefaultProperty();
             this.EnableSortmode();
             this.BindGrid();
-        } 
+        }
         #endregion
 
         #region Control Events
@@ -34,23 +34,21 @@ namespace POS
         private void btnSave_Click(object sender, EventArgs e)
         {
             CustomerDTO objToAdd = new CustomerDTO();
-            Int32 phoneno = 0;
-            Int32 PhoneNo = 0;
             if (String.IsNullOrWhiteSpace(this.txtCustomerName.Text))
             {
                 MessageBox.Show("Please enter Customer Name", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (String.IsNullOrWhiteSpace(this.txtEmailId.Text))
-            {
-                MessageBox.Show("Please enter Email Id", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(this.txtPhoneNo.Text))
-            {
-                MessageBox.Show("Please enter Phone No", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //if (String.IsNullOrWhiteSpace(this.txtEmailId.Text))
+            //{
+            //    MessageBox.Show("Please enter Email Id", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
+            //if (String.IsNullOrWhiteSpace(this.txtPhoneNo.Text))
+            //{
+            //    MessageBox.Show("Please enter Phone No", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
             //if (!string.IsNullOrWhiteSpace(this.txtPhoneNo.Text))
             //{
             //    if (!Int32.TryParse(this.txtPhoneNo.Text, out phoneno))
@@ -65,6 +63,10 @@ namespace POS
             objToAdd.EmailId = this.txtEmailId.Text.Trim();
             objToAdd.CustomerAddress = this.txtAddress.Text.Trim();
             objToAdd.PhoneNo = this.txtPhoneNo.Text.Trim();
+            objToAdd.CustomerAddress2 = txtAddress2.Text;
+            objToAdd.GSTNo = txtGSTNo.Text;
+            objToAdd.CSTNo = txtCSTNo.Text;
+            objToAdd.PANNo = txtPANNo.Text;
             if (CustomerId > 0)
             {
                 objToAdd.CustomerId = CustomerId;
@@ -180,7 +182,7 @@ namespace POS
             var rowid = (((System.Windows.Forms.DataGridView)(sender)).CurrentCell).RowIndex;
             this.CustomerId = Convert.ToInt32(this.grdCode.Rows[rowid].Cells[0].Value);
             this.EditData(this.CustomerId);
-        } 
+        }
         #endregion
 
         #region Methods
@@ -280,7 +282,7 @@ namespace POS
 
             this.MinimumSize = new Size(this.Width, this.Height);
             this.MaximumSize = new Size(this.Width, this.Height);
-        } 
+        }
         #endregion
 
         private void grdCode_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

@@ -274,7 +274,10 @@ namespace POS.DAL
 
                             ItemCode = detail.ItemCode,
                             ItemName = detail.ItemMaster.ItemName,
-                            Unit = detail.ItemMaster.CodeMaster2.Code,
+                            Unit = (from x in context.ItemMaster
+                                    join u in context.CodeMaster on x.UnitID equals u.ID
+                                    where x.ItemID == detail.ItemID
+                                    select u).FirstOrDefault().Name,
                         });
                     }
                     return res;
@@ -287,7 +290,7 @@ namespace POS.DAL
 
         public int GetNextInwardNumber()
         {
-            using (POS_RutuEntities context = new POS_RutuEntities()) 
+            using (POS_RutuEntities context = new POS_RutuEntities())
             {
                 return context.PurchaseMaster.Count() + 1;
             }

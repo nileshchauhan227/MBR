@@ -34,9 +34,12 @@ namespace POS.DAL
                 objBill.Series = objToSave.Series;
                 objBill.Rnumber = objToSave.Rnumber;
                 objBill.InvoiceDate = objToSave.InvoiceDate;
-                objBill.Party = objToSave.Party;
-                objBill.PaymentMode = objToSave.PaymentMode;
-                objBill.TableID = objToSave.TableID;
+                if (!string.IsNullOrWhiteSpace(objToSave.Party))
+                    objBill.Party = objToSave.Party;
+                if (!string.IsNullOrWhiteSpace(objToSave.PaymentMode))
+                    objBill.PaymentMode = objToSave.PaymentMode;
+                if(objToSave.TableID > 0)
+                    objBill.TableID = objToSave.TableID;
                 if (objToSave.WaiterID > 0)
                     objBill.WaiterID = objToSave.WaiterID;
                 objBill.MobileNo = objToSave.MobileNo;
@@ -47,25 +50,31 @@ namespace POS.DAL
                 objBill.DiscountReason = objToSave.DiscountReason;
                 objBill.Tax = objToSave.Tax;
                 objBill.NetAmount = objToSave.NetAmount;
-                objBill.CashReceived = objToSave.CashReceived;
+                if(objBill.NetAmount > 0)
+                    objBill.CashReceived = objToSave.CashReceived;
                 objBill.RoundOff = objToSave.RoundOff;
                 objBill.IsPrinted = objToSave.IsPrinted;
                 objBill.IsDeleted = objToSave.IsDeleted;
-                objBill.CustomerId = objToSave.CustomerId;
-                objBill.AdditionalPercentage = objToSave.AdditionalPercentage;
-                objBill.AdditionalTax = objToSave.AdditionalTax;
-                objBill.BillTypeId = objToSave.BillTypeId;
+                if (objToSave.CustomerId > 0)
+                    objBill.CustomerId = objToSave.CustomerId;
+                if (objToSave.AdditionalPercentage > 0)
+                    objBill.AdditionalPercentage = objToSave.AdditionalPercentage;
+                if (objToSave.AdditionalTax > 0)
+                    objBill.AdditionalTax = objToSave.AdditionalTax;
+                if (objToSave.BillTypeId > 0)
+                    objBill.BillTypeId = objToSave.BillTypeId;
+                if (objToSave.NarrationId > 0)
+                    objBill.NarrationId = objToSave.NarrationId;
+                if (!string.IsNullOrWhiteSpace(objToSave.ChallanNo))
+                    objBill.ChallanNo = objToSave.ChallanNo;
+
                 foreach (BillDetailsDTO item in objToSave.details)
                 {
                     objBill.BillDetails.Add(new BillDetails() { BillID = objBill.BillID, ItemID = item.ItemID, Quantity = item.Quantity, Rate = item.Rate, Discount = item.Discount, Amount = item.Amount, Tax = item.Tax, IsDeleted = item.IsDeleted });
+
                     var objitem = context.ItemMaster.Where(x => x.ItemID == item.ItemID).FirstOrDefault();
                     objitem.OpeningBalance = (objitem.OpeningBalance ?? 0) - item.Quantity;
-                    if (objitem.IsUniqueSerialNumber ?? false)
-                    {
-                        var barcodeitem = context.ItemBarcode.Where(x => x.BarCode == item.ItemCode && x.ItemID == item.ItemID).FirstOrDefault();
-                        barcodeitem.IsSold = true;
-                        barcodeitem.BillID = objBill.BillID;
-                    }
+
                 }
                 context.BillMaster.AddObject(objBill);
                 context.SaveChanges();
@@ -116,28 +125,46 @@ namespace POS.DAL
                          Rnumber = obj.Rnumber,
                          InvoiceDate = obj.InvoiceDate,
                          Party = obj.Party,
-                         PaymentMode = obj.PaymentMode,
-                         TableID = obj.TableID.Value,
+                         PaymentMode =  obj.PaymentMode,
+                         TableID = obj.TableID.HasValue ? obj.TableID.Value : 0,
                          WaiterID = obj.WaiterID ?? 0,
                          MobileNo = obj.MobileNo,
-                         NoOfItems = obj.NoOfItems.Value,
+                         NoOfItems = obj.NoOfItems.HasValue? obj.NoOfItems.Value : 0,
                          GrossAmount = obj.GrossAmount.Value,
                          DiscountPercentage = obj.DiscountPercentage.Value,
-                         Discount = obj.Discount.Value,
+                         Discount = obj.Discount.HasValue ? obj.Discount.Value: 0,
                          DiscountReason = obj.DiscountReason,
                          Tax = obj.Tax,
                          NetAmount = obj.NetAmount.Value,
-                         CashReceived = obj.CashReceived.Value,
+                         CashReceived = obj.CashReceived.HasValue? obj.CashReceived.Value : 0,
                          RoundOff = obj.RoundOff.Value,
                          IsPrinted = obj.IsPrinted.Value,
                          CustomerId = obj.CustomerId.HasValue ? obj.CustomerId.Value : 0,
                          BillTypeId = obj.BillTypeId.HasValue ? obj.BillTypeId.Value : 0,
                          AdditionalTax = obj.AdditionalTax.HasValue ? obj.AdditionalTax.Value : 0,
-                         AdditionalPercentage = obj.AdditionalPercentage.HasValue ? obj.AdditionalPercentage.Value : 0
+                         AdditionalPercentage = obj.AdditionalPercentage.HasValue ? obj.AdditionalPercentage.Value : 0,
+                         ChallanNo =  obj.ChallanNo,
+                         NarrationId = obj.NarrationId.HasValue ? obj.NarrationId.Value : 0
                      };
                     foreach (var item in obj.BillDetails)
                     {
-                        res.details.Add(new BillDetailsDTO() { Quantity = item.Quantity ?? 0, Rate = item.Rate ?? 0, Discount = item.Discount ?? 0, Amount = item.Amount ?? 0, ItemID = item.ItemID ?? 0, BillDetailID = item.BillDetailID, BillID = item.BillID, ItemCode = item.ItemMaster.ItemCode, ItemName = item.ItemMaster.ItemName, Tax = item.Tax, Unit = item.ItemMaster.CodeMaster2.Code });
+                        res.details.Add(new BillDetailsDTO() 
+                        { 
+                            Quantity = item.Quantity ?? 0, 
+                            Rate = item.Rate ?? 0, 
+                            Discount = item.Discount ?? 0, 
+                            Amount = item.Amount ?? 0, 
+                            ItemID = item.ItemID ?? 0, 
+                            BillDetailID = item.BillDetailID, 
+                            BillID = item.BillID, 
+                            ItemCode = item.ItemMaster.ItemCode, 
+                            ItemName = item.ItemMaster.ItemName, 
+                            Tax = item.Tax,
+                            Unit = (from x in context.ItemMaster
+                                           join u in context.CodeMaster on x.UnitID equals u.ID
+                                           where x.ItemID == item.ItemID
+                                           select u).FirstOrDefault().Name,
+                        });
                     }
 
                     return res;
@@ -177,6 +204,10 @@ namespace POS.DAL
                 return true;
             }
         }
+
+
+
+
         public bool UpdatePrintFlagByRunningNumber(int RunningNumber)
         {
             using (POS_RutuEntities context = new POS_RutuEntities())
@@ -187,6 +218,7 @@ namespace POS.DAL
                 return true;
             }
         }
+
         public object Update(BillMasterDTO objToSave)
         {
             using (POS_RutuEntities context = new POS_RutuEntities())
@@ -237,6 +269,7 @@ namespace POS.DAL
                 return objBill.BillID;
             }
         }
+
         public List<BillMasterDTO> GetPendingPrintBill(DateTime dateTime)
         {
             using (POS_RutuEntities context = new POS_RutuEntities())

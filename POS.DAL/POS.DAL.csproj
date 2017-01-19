@@ -75,6 +75,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="clsDKOT.cs" />
+    <Compile Include="clsDNarration.cs" />
     <Compile Include="clsDPurchaseReturn.cs" />
     <Compile Include="clsDReports.cs" />
     <Compile Include="clsDStockBalance.cs" />

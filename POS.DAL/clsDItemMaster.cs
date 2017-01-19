@@ -79,7 +79,42 @@ namespace POS.DAL
                 return query;
             }
         }
-
+        public List<ItemMasterDTO> GetItemsForCustomer()
+        {
+            using (POS_RutuEntities context = new POS_RutuEntities())
+            {
+                var query = (from x in context.ItemMaster
+                             join g in context.CodeMaster on x.GroupID equals g.ID
+                             join u in context.CodeMaster on x.UnitID equals u.ID
+                             join f in context.CodeMaster on x.FirmId equals f.ID
+                             join c in context.ItemBarcode on x.ItemID equals c.ItemID
+                             join m in context.CustomerMapping on x.ItemID equals m.ItemId
+                             where (x.IsActive ?? true) == true
+                             && (x.IsSaleable ?? false) == true
+                             && (c.IsSold ?? false) == false
+                             select new ItemMasterDTO
+                {
+                    ItemID = x.ItemID,
+                    //FirmId = x.FirmId.HasValue ? x.FirmId.Value : 0,
+                    ItemCode = c.BarCode,
+                    ItemName = x.ItemName,
+                    GroupID = x.GroupID,
+                    UnitID = x.UnitID,
+                    Discount = x.Discount,
+                    Rate = m.Rate.HasValue ? m.Rate.Value : 0,// x.Rate,
+                    OtherDiscount = x.OtherDiscount,
+                    ServiceTax = x.ServiceTax ?? false,
+                    IsActive = x.IsActive,
+                    Group = g.Name,
+                    unit = u.Name,
+                    IsSaleable = x.IsSaleable.HasValue ? x.IsSaleable.Value : false,
+                    IsUniqueSerialNumber = x.IsUniqueSerialNumber,
+                    OpeningBalance = x.OpeningBalance,
+                    CustomerId = m.CustomerId.HasValue ? m.CustomerId.Value : 0
+                });
+                return query.ToList();
+            }
+        }
         public ItemMasterDTO GetItems(int ItemID)
         {
             using (POS_RutuEntities context = new POS_RutuEntities())
@@ -184,7 +219,7 @@ namespace POS.DAL
                         {
                             context.ItemBarcode.DeleteObject(barcode);
                         }
-                        context.ItemMaster.DeleteObject(objToDelete);                        
+                        context.ItemMaster.DeleteObject(objToDelete);
                         context.SaveChanges();
                         return true;
                     }
@@ -211,6 +246,8 @@ namespace POS.DAL
             using (POS_RutuEntities context = new POS_RutuEntities())
             {
                 var query = (from x in context.ItemMaster
+                             join g in context.CodeMaster on x.GroupID equals g.ID
+                             join u in context.CodeMaster on x.UnitID equals u.ID
                              where x.ItemCode == ItemCode
                              select new ItemMasterDTO
                              {
@@ -223,8 +260,8 @@ namespace POS.DAL
                                  Rate = x.Rate,
                                  OtherDiscount = x.OtherDiscount,
                                  IsActive = x.IsActive,
-                                 Group = x.CodeMaster.Name,
-                                 unit = x.CodeMaster.Name,
+                                 Group = g.Name,
+                                 unit = u.Name,
                                  IsSaleable = x.IsSaleable ?? false,
                                  IsUniqueSerialNumber = x.IsUniqueSerialNumber,
                                  OpeningBalance = x.OpeningBalance,
@@ -238,6 +275,8 @@ namespace POS.DAL
             using (POS_RutuEntities context = new POS_RutuEntities())
             {
                 var query = (from x in context.ItemMaster
+                             join g in context.CodeMaster on x.GroupID equals g.ID
+                             join u in context.CodeMaster on x.UnitID equals u.ID
                              where x.ItemName == itemName
                              select new ItemMasterDTO
                              {
@@ -250,8 +289,8 @@ namespace POS.DAL
                                  Rate = x.Rate,
                                  OtherDiscount = x.OtherDiscount,
                                  IsActive = x.IsActive,
-                                 Group = x.CodeMaster.Name,
-                                 unit = x.CodeMaster.Name,
+                                 Group = g.Name,
+                                 unit = u.Name,
                                  IsSaleable = x.IsSaleable ?? false,
                                  IsUniqueSerialNumber = x.IsUniqueSerialNumber,
                                  OpeningBalance = x.OpeningBalance,

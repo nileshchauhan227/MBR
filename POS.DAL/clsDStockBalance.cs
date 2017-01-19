@@ -70,7 +70,7 @@ namespace POS.DAL
             {
                 using (POS_RutuEntities context = new POS_RutuEntities())
                 {
-                    context.UpodateStockBalance(openclose);
+                    context.UpodateStockBalance(openclose,DateTime.Now);
                     return true;
                 }
             }

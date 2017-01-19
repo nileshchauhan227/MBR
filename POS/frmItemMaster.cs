@@ -64,7 +64,7 @@ namespace POS
             objToAdd.GroupID = Convert.ToInt16(ddlGroup.SelectedValue);
             objToAdd.UnitID = Convert.ToInt16(ddlUnit.SelectedValue);
             objToAdd.Discount = Convert.ToDecimal(txtDiscountRate.Text == "" ? "0" : txtDiscountRate.Text);
-            objToAdd.Rate = Convert.ToDecimal(txtItemRate.Text == "" ? "0" : txtItemRate.Text);
+            objToAdd.Rate = Convert.ToInt64(txtItemRate.Text == "" ? "0" : txtItemRate.Text);
             objToAdd.OtherDiscount = Convert.ToDecimal(txtOtherDiscount.Text == "" ? "0" : txtOtherDiscount.Text);
             objToAdd.FirmId = Convert.ToInt16(ddlFirm.SelectedValue);
             objToAdd.ServiceTax = chkServiceTax.Checked;

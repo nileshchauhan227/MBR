@@ -6821,6 +6821,10 @@ namespace POS_Reports {
             
             private global::System.Data.DataColumn columnName;
             
+            private global::System.Data.DataColumn columnNarration;
+            
+            private global::System.Data.DataColumn columnChallanNo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GetBillDetail1DataTable() {
@@ -7056,6 +7060,22 @@ namespace POS_Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NarrationColumn {
+                get {
+                    return this.columnNarration;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ChallanNoColumn {
+                get {
+                    return this.columnChallanNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7116,7 +7136,9 @@ namespace POS_Reports {
                         string PhoneNo, 
                         string EmailId, 
                         int BillTypeId, 
-                        string Name) {
+                        string Name, 
+                        string Narration, 
+                        string ChallanNo) {
                 GetBillDetail1Row rowGetBillDetail1Row = ((GetBillDetail1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Series,
@@ -7143,7 +7165,9 @@ namespace POS_Reports {
                         PhoneNo,
                         EmailId,
                         BillTypeId,
-                        Name};
+                        Name,
+                        Narration,
+                        ChallanNo};
                 rowGetBillDetail1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGetBillDetail1Row);
                 return rowGetBillDetail1Row;
@@ -7191,6 +7215,8 @@ namespace POS_Reports {
                 this.columnEmailId = base.Columns["EmailId"];
                 this.columnBillTypeId = base.Columns["BillTypeId"];
                 this.columnName = base.Columns["Name"];
+                this.columnNarration = base.Columns["Narration"];
+                this.columnChallanNo = base.Columns["ChallanNo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7246,6 +7272,10 @@ namespace POS_Reports {
                 base.Columns.Add(this.columnBillTypeId);
                 this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnName);
+                this.columnNarration = new global::System.Data.DataColumn("Narration", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNarration);
+                this.columnChallanNo = new global::System.Data.DataColumn("ChallanNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnChallanNo);
                 this.columnSeries.AllowDBNull = false;
                 this.columnSeries.MaxLength = 50;
                 this.columnRnumber.AllowDBNull = false;
@@ -7262,6 +7292,8 @@ namespace POS_Reports {
                 this.columnPhoneNo.MaxLength = 50;
                 this.columnEmailId.MaxLength = 150;
                 this.columnName.MaxLength = 50;
+                this.columnNarration.MaxLength = 1000;
+                this.columnChallanNo.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12125,6 +12157,38 @@ namespace POS_Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Narration {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetBillDetail1.NarrationColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Narration\' in table \'GetBillDetail1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetBillDetail1.NarrationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ChallanNo {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetBillDetail1.ChallanNoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ChallanNo\' in table \'GetBillDetail1\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetBillDetail1.ChallanNoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPartyNull() {
                 return this.IsNull(this.tableGetBillDetail1.PartyColumn);
             }
@@ -12385,6 +12449,30 @@ namespace POS_Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNameNull() {
                 this[this.tableGetBillDetail1.NameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNarrationNull() {
+                return this.IsNull(this.tableGetBillDetail1.NarrationColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNarrationNull() {
+                this[this.tableGetBillDetail1.NarrationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsChallanNoNull() {
+                return this.IsNull(this.tableGetBillDetail1.ChallanNoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetChallanNoNull() {
+                this[this.tableGetBillDetail1.ChallanNoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -16130,6 +16218,8 @@ namespace POS_Reports.dsRutuTableAdapters {
             tableMapping.ColumnMappings.Add("EmailId", "EmailId");
             tableMapping.ColumnMappings.Add("BillTypeId", "BillTypeId");
             tableMapping.ColumnMappings.Add("Name", "Name");
+            tableMapping.ColumnMappings.Add("Narration", "Narration");
+            tableMapping.ColumnMappings.Add("ChallanNo", "ChallanNo");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -16137,7 +16227,7 @@ namespace POS_Reports.dsRutuTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::POS_Reports.Properties.Settings.Default.POS_Rutu_NConnectionString;
+            this._connection.ConnectionString = global::POS_Reports.Properties.Settings.Default.TISPOS_DEPConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

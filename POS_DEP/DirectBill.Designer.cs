@@ -73,6 +73,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtBillNumber = new System.Windows.Forms.TextBox();
             this.grdBill = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtInvoiceDate = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtBillSeries = new System.Windows.Forms.TextBox();
             this.Sr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,11 +87,6 @@
             this.GrossAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BillDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtInvoiceDate = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBillSeries = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdBill)).BeginInit();
             this.SuspendLayout();
@@ -147,11 +147,12 @@
             // 
             this.dtInvoiceDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dtInvoiceDate.CustomFormat = "dd/MM/yyyy";
+            this.dtInvoiceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtInvoiceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtInvoiceDate.Location = new System.Drawing.Point(109, 51);
             this.dtInvoiceDate.Name = "dtInvoiceDate";
-            this.dtInvoiceDate.Size = new System.Drawing.Size(153, 20);
-            this.dtInvoiceDate.TabIndex = 133;
+            this.dtInvoiceDate.Size = new System.Drawing.Size(153, 23);
+            this.dtInvoiceDate.TabIndex = 20;
             // 
             // label8
             // 
@@ -212,7 +213,7 @@
             this.txtChallanNo.Location = new System.Drawing.Point(109, 121);
             this.txtChallanNo.Name = "txtChallanNo";
             this.txtChallanNo.Size = new System.Drawing.Size(618, 30);
-            this.txtChallanNo.TabIndex = 127;
+            this.txtChallanNo.TabIndex = 50;
             // 
             // label10
             // 
@@ -232,7 +233,7 @@
             this.ddlNarration.Location = new System.Drawing.Point(109, 157);
             this.ddlNarration.Name = "ddlNarration";
             this.ddlNarration.Size = new System.Drawing.Size(618, 28);
-            this.ddlNarration.TabIndex = 125;
+            this.ddlNarration.TabIndex = 60;
             // 
             // label9
             // 
@@ -250,10 +251,10 @@
             this.ddlBillTypeId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlBillTypeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ddlBillTypeId.FormattingEnabled = true;
-            this.ddlBillTypeId.Location = new System.Drawing.Point(401, 47);
+            this.ddlBillTypeId.Location = new System.Drawing.Point(393, 49);
             this.ddlBillTypeId.Name = "ddlBillTypeId";
             this.ddlBillTypeId.Size = new System.Drawing.Size(145, 28);
-            this.ddlBillTypeId.TabIndex = 123;
+            this.ddlBillTypeId.TabIndex = 30;
             this.ddlBillTypeId.SelectedIndexChanged += new System.EventHandler(this.ddlBillTypeId_SelectedIndexChanged);
             // 
             // ddlCustomer
@@ -264,7 +265,7 @@
             this.ddlCustomer.Location = new System.Drawing.Point(109, 86);
             this.ddlCustomer.Name = "ddlCustomer";
             this.ddlCustomer.Size = new System.Drawing.Size(618, 28);
-            this.ddlCustomer.TabIndex = 122;
+            this.ddlCustomer.TabIndex = 40;
             // 
             // txtAdditionalTax
             // 
@@ -328,7 +329,7 @@
             this.btnSave.Location = new System.Drawing.Point(580, 585);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(120, 35);
-            this.btnSave.TabIndex = 81;
+            this.btnSave.TabIndex = 80;
             this.btnSave.Text = "&Done";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -379,6 +380,7 @@
             this.txtRoundOffAmount.Name = "txtRoundOffAmount";
             this.txtRoundOffAmount.Size = new System.Drawing.Size(124, 30);
             this.txtRoundOffAmount.TabIndex = 95;
+            this.txtRoundOffAmount.Text = "0.00";
             this.txtRoundOffAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnCancel
@@ -411,7 +413,7 @@
             this.btnPrint.Location = new System.Drawing.Point(580, 626);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(120, 35);
-            this.btnPrint.TabIndex = 88;
+            this.btnPrint.TabIndex = 120;
             this.btnPrint.Text = "&Print";
             this.btnPrint.UseVisualStyleBackColor = false;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -435,7 +437,7 @@
             this.btnNext.Location = new System.Drawing.Point(328, 626);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(120, 35);
-            this.btnNext.TabIndex = 84;
+            this.btnNext.TabIndex = 100;
             this.btnNext.Text = "&Next";
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -447,7 +449,7 @@
             this.btnLast.Location = new System.Drawing.Point(454, 626);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(120, 35);
-            this.btnLast.TabIndex = 86;
+            this.btnLast.TabIndex = 110;
             this.btnLast.Text = "Las&t";
             this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
@@ -459,7 +461,7 @@
             this.btnPrevious.Location = new System.Drawing.Point(202, 626);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(120, 35);
-            this.btnPrevious.TabIndex = 85;
+            this.btnPrevious.TabIndex = 90;
             this.btnPrevious.Text = "Pre&vious";
             this.btnPrevious.UseVisualStyleBackColor = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
@@ -541,7 +543,7 @@
             this.txtBillNumber.Location = new System.Drawing.Point(109, 11);
             this.txtBillNumber.Name = "txtBillNumber";
             this.txtBillNumber.Size = new System.Drawing.Size(112, 30);
-            this.txtBillNumber.TabIndex = 60;
+            this.txtBillNumber.TabIndex = 1;
             // 
             // grdBill
             // 
@@ -593,12 +595,63 @@
             this.grdBill.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.grdBill.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.grdBill.Size = new System.Drawing.Size(895, 345);
-            this.grdBill.TabIndex = 67;
+            this.grdBill.TabIndex = 70;
             this.grdBill.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdBill_CellValueChanged);
             this.grdBill.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.grdBill_EditingControlShowing);
             this.grdBill.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdBill_RowEnter);
             this.grdBill.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grdBill_RowsAdded);
             this.grdBill.KeyUp += new System.Windows.Forms.KeyEventHandler(this.grdBill_KeyUp);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(299, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 66;
+            this.label4.Text = "Bill Type";
+            // 
+            // txtInvoiceDate
+            // 
+            this.txtInvoiceDate.BackColor = System.Drawing.Color.White;
+            this.txtInvoiceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoiceDate.Location = new System.Drawing.Point(902, 5);
+            this.txtInvoiceDate.Name = "txtInvoiceDate";
+            this.txtInvoiceDate.Size = new System.Drawing.Size(179, 30);
+            this.txtInvoiceDate.TabIndex = 61;
+            this.txtInvoiceDate.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(12, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 20);
+            this.label3.TabIndex = 65;
+            this.label3.Text = "Invoice Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 20);
+            this.label2.TabIndex = 64;
+            this.label2.Text = "Invoice No.";
+            // 
+            // txtBillSeries
+            // 
+            this.txtBillSeries.BackColor = System.Drawing.Color.White;
+            this.txtBillSeries.Enabled = false;
+            this.txtBillSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBillSeries.Location = new System.Drawing.Point(227, 12);
+            this.txtBillSeries.Name = "txtBillSeries";
+            this.txtBillSeries.Size = new System.Drawing.Size(246, 30);
+            this.txtBillSeries.TabIndex = 10;
+            this.txtBillSeries.Visible = false;
             // 
             // Sr
             // 
@@ -616,7 +669,6 @@
             this.Code.FillWeight = 70F;
             this.Code.HeaderText = "Code";
             this.Code.Name = "Code";
-            this.Code.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Name
             // 
@@ -673,56 +725,6 @@
             this.BillDetailID.Name = "BillDetailID";
             this.BillDetailID.Visible = false;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(304, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 20);
-            this.label4.TabIndex = 66;
-            this.label4.Text = "Bill Type";
-            // 
-            // txtInvoiceDate
-            // 
-            this.txtInvoiceDate.BackColor = System.Drawing.Color.White;
-            this.txtInvoiceDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoiceDate.Location = new System.Drawing.Point(902, 5);
-            this.txtInvoiceDate.Name = "txtInvoiceDate";
-            this.txtInvoiceDate.Size = new System.Drawing.Size(179, 30);
-            this.txtInvoiceDate.TabIndex = 61;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(96, 20);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Invoice Date";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bell MT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Invoice No.";
-            // 
-            // txtBillSeries
-            // 
-            this.txtBillSeries.BackColor = System.Drawing.Color.White;
-            this.txtBillSeries.Enabled = false;
-            this.txtBillSeries.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBillSeries.Location = new System.Drawing.Point(227, 12);
-            this.txtBillSeries.Name = "txtBillSeries";
-            this.txtBillSeries.Size = new System.Drawing.Size(246, 30);
-            this.txtBillSeries.TabIndex = 59;
-            this.txtBillSeries.Visible = false;
-            // 
             // DirectBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -772,15 +774,6 @@
         private System.Windows.Forms.TextBox txtInvoiceTime;
         private System.Windows.Forms.TextBox txtServiceTax;
         private System.Windows.Forms.Label lblServiceTax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GrossAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BillDetailID;
         private System.Windows.Forms.TextBox txtAdditionalTax;
         private System.Windows.Forms.Label lblAdditionalTax;
         private System.Windows.Forms.ComboBox ddlCustomer;
@@ -795,5 +788,14 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtInvoiceDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GrossAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BillDetailID;
     }
 }

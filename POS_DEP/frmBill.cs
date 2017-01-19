@@ -83,10 +83,10 @@ namespace POS
             {
                 foreach (var detail in item.detailList)
                 {
-                    decimal itemdiscount = ((detail.ItemRate.Value * detail.Discount.Value / 100) + detail.OtherDiscount.Value);
-                    GrossAmount += detail.Quantity * (detail.ItemRate.Value - itemdiscount);
+                    decimal itemdiscount = ((Convert.ToDecimal(detail.ItemRate.Value) * detail.Discount.Value / 100) + detail.OtherDiscount.Value);
+                    GrossAmount += detail.Quantity * (Convert.ToDecimal(detail.ItemRate.Value) - itemdiscount);
                     //DiscountAmount += itemdiscount;
-                    grdBill.Rows.Add(srno++, detail.Quantity, detail.ItemCode, detail.ItemName, detail.ItemRate, itemdiscount.GetDecimalString(), (detail.Quantity * (detail.ItemRate.Value - itemdiscount)).GetDecimalString(), detail.ItemID);
+                    grdBill.Rows.Add(srno++, detail.Quantity, detail.ItemCode, detail.ItemName, detail.ItemRate, itemdiscount.GetDecimalString(), (detail.Quantity * (Convert.ToDecimal(detail.ItemRate.Value) - itemdiscount)).GetDecimalString(), detail.ItemID);
                 }
             }
             txtDiscountReason.Enabled = txtDiscountReason.Enabled = this.ApplyManualDiscount;

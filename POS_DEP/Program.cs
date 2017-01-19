@@ -68,7 +68,7 @@ namespace POS
             //{
             //    isActivationExists = true;
             //}
-            //else if(dbcreated && usrtableexists)
+            //else if (dbcreated && usrtableexists)
             //{
             //    using (var objChildform = new CompanySetup(databasePath))
             //    {
@@ -82,15 +82,15 @@ namespace POS
             //            isActivationExists = false;
             //    }
             //    //dialog form to take entry of user . 
-                
+
             //}
             //if (dbcreated && usrtableexists && isActivationExists)
-            {
+            //{
                 Application.Run(new Login());
                 //Application.Run(new Server());
-            }
+            //}
             //else
-              //  Application.Exit();
+            //    Application.Exit();
         }
     }
 }

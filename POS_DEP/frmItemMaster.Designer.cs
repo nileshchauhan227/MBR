@@ -157,7 +157,7 @@
             this.txtSearch.Location = new System.Drawing.Point(162, 286);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(167, 30);
-            this.txtSearch.TabIndex = 14;
+            this.txtSearch.TabIndex = 210;
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // label8
@@ -178,7 +178,7 @@
             this.txtItemCode.MaxLength = 50;
             this.txtItemCode.Name = "txtItemCode";
             this.txtItemCode.Size = new System.Drawing.Size(160, 30);
-            this.txtItemCode.TabIndex = 0;
+            this.txtItemCode.TabIndex = 20;
             // 
             // label1
             // 
@@ -197,7 +197,7 @@
             this.txtItemName.Location = new System.Drawing.Point(263, 38);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(372, 30);
-            this.txtItemName.TabIndex = 1;
+            this.txtItemName.TabIndex = 30;
             // 
             // label3
             // 
@@ -228,7 +228,7 @@
             this.txtDiscountRate.Name = "txtDiscountRate";
             this.txtDiscountRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtDiscountRate.Size = new System.Drawing.Size(162, 30);
-            this.txtDiscountRate.TabIndex = 4;
+            this.txtDiscountRate.TabIndex = 70;
             this.txtDiscountRate.Visible = false;
             this.txtDiscountRate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountRate_KeyPress);
             // 
@@ -271,9 +271,8 @@
             this.txtItemRate.Location = new System.Drawing.Point(97, 108);
             this.txtItemRate.MaxLength = 6;
             this.txtItemRate.Name = "txtItemRate";
-            this.txtItemRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtItemRate.Size = new System.Drawing.Size(167, 30);
-            this.txtItemRate.TabIndex = 5;
+            this.txtItemRate.TabIndex = 60;
             // 
             // txtOtherDiscount
             // 
@@ -284,7 +283,7 @@
             this.txtOtherDiscount.Name = "txtOtherDiscount";
             this.txtOtherDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtOtherDiscount.Size = new System.Drawing.Size(160, 30);
-            this.txtOtherDiscount.TabIndex = 6;
+            this.txtOtherDiscount.TabIndex = 120;
             this.txtOtherDiscount.Visible = false;
             // 
             // ddlGroup
@@ -295,7 +294,7 @@
             this.ddlGroup.Location = new System.Drawing.Point(97, 74);
             this.ddlGroup.Name = "ddlGroup";
             this.ddlGroup.Size = new System.Drawing.Size(160, 28);
-            this.ddlGroup.TabIndex = 2;
+            this.ddlGroup.TabIndex = 40;
             // 
             // ddlUnit
             // 
@@ -305,7 +304,7 @@
             this.ddlUnit.Location = new System.Drawing.Point(475, 74);
             this.ddlUnit.Name = "ddlUnit";
             this.ddlUnit.Size = new System.Drawing.Size(160, 28);
-            this.ddlUnit.TabIndex = 3;
+            this.ddlUnit.TabIndex = 50;
             // 
             // btnSave
             // 
@@ -313,7 +312,7 @@
             this.btnSave.Location = new System.Drawing.Point(101, 250);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 31);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 140;
             this.btnSave.Text = "&Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -325,7 +324,7 @@
             this.btnCancel.Location = new System.Drawing.Point(194, 250);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(87, 31);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 150;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -336,7 +335,7 @@
             this.btnFirst.Location = new System.Drawing.Point(473, 250);
             this.btnFirst.Name = "btnFirst";
             this.btnFirst.Size = new System.Drawing.Size(87, 31);
-            this.btnFirst.TabIndex = 10;
+            this.btnFirst.TabIndex = 180;
             this.btnFirst.Text = "&First";
             this.btnFirst.UseVisualStyleBackColor = true;
             this.btnFirst.Click += new System.EventHandler(this.btnFirst_Click);
@@ -347,7 +346,7 @@
             this.btnNext.Location = new System.Drawing.Point(661, 250);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(87, 31);
-            this.btnNext.TabIndex = 11;
+            this.btnNext.TabIndex = 200;
             this.btnNext.Text = "&Next";
             this.btnNext.UseVisualStyleBackColor = true;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
@@ -358,7 +357,7 @@
             this.btnPrevious.Location = new System.Drawing.Point(568, 250);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(87, 31);
-            this.btnPrevious.TabIndex = 12;
+            this.btnPrevious.TabIndex = 190;
             this.btnPrevious.Text = "&Previous";
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
@@ -369,7 +368,7 @@
             this.btnLast.Location = new System.Drawing.Point(752, 250);
             this.btnLast.Name = "btnLast";
             this.btnLast.Size = new System.Drawing.Size(87, 31);
-            this.btnLast.TabIndex = 13;
+            this.btnLast.TabIndex = 210;
             this.btnLast.Text = "&Last";
             this.btnLast.UseVisualStyleBackColor = true;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
@@ -381,7 +380,7 @@
             this.btnModify.Location = new System.Drawing.Point(287, 250);
             this.btnModify.Name = "btnModify";
             this.btnModify.Size = new System.Drawing.Size(87, 31);
-            this.btnModify.TabIndex = 9;
+            this.btnModify.TabIndex = 160;
             this.btnModify.Text = "&Modify";
             this.btnModify.UseVisualStyleBackColor = true;
             this.btnModify.Click += new System.EventHandler(this.btnModify_Click);
@@ -392,7 +391,7 @@
             this.btnDelete.Location = new System.Drawing.Point(378, 250);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(87, 31);
-            this.btnDelete.TabIndex = 17;
+            this.btnDelete.TabIndex = 170;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -403,7 +402,7 @@
             this.chkStatus.Location = new System.Drawing.Point(97, 152);
             this.chkStatus.Name = "chkStatus";
             this.chkStatus.Size = new System.Drawing.Size(56, 17);
-            this.chkStatus.TabIndex = 19;
+            this.chkStatus.TabIndex = 80;
             this.chkStatus.Text = "Active";
             this.chkStatus.UseVisualStyleBackColor = true;
             // 
@@ -415,7 +414,7 @@
             this.ddlFirm.Location = new System.Drawing.Point(97, 4);
             this.ddlFirm.Name = "ddlFirm";
             this.ddlFirm.Size = new System.Drawing.Size(539, 28);
-            this.ddlFirm.TabIndex = 21;
+            this.ddlFirm.TabIndex = 10;
             // 
             // label2
             // 
@@ -442,7 +441,7 @@
             this.chkServiceTax.Location = new System.Drawing.Point(185, 176);
             this.chkServiceTax.Name = "chkServiceTax";
             this.chkServiceTax.Size = new System.Drawing.Size(112, 17);
-            this.chkServiceTax.TabIndex = 25;
+            this.chkServiceTax.TabIndex = 110;
             this.chkServiceTax.Text = "Apply Service Tax";
             this.chkServiceTax.UseVisualStyleBackColor = true;
             // 
@@ -452,7 +451,7 @@
             this.chkIsSaleable.Location = new System.Drawing.Point(97, 175);
             this.chkIsSaleable.Name = "chkIsSaleable";
             this.chkIsSaleable.Size = new System.Drawing.Size(67, 17);
-            this.chkIsSaleable.TabIndex = 26;
+            this.chkIsSaleable.TabIndex = 100;
             this.chkIsSaleable.Text = "Saleable";
             this.chkIsSaleable.UseVisualStyleBackColor = true;
             // 
@@ -462,7 +461,7 @@
             this.chIsUniqueSerialNumber.Location = new System.Drawing.Point(185, 153);
             this.chIsUniqueSerialNumber.Name = "chIsUniqueSerialNumber";
             this.chIsUniqueSerialNumber.Size = new System.Drawing.Size(158, 17);
-            this.chIsUniqueSerialNumber.TabIndex = 27;
+            this.chIsUniqueSerialNumber.TabIndex = 90;
             this.chIsUniqueSerialNumber.Text = "Apply Unique Serial Number";
             this.chIsUniqueSerialNumber.UseVisualStyleBackColor = true;
             this.chIsUniqueSerialNumber.Click += new System.EventHandler(this.chIsUniqueSerialNumber_Click);
@@ -476,7 +475,7 @@
             this.txtOpeningBalance.Name = "txtOpeningBalance";
             this.txtOpeningBalance.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtOpeningBalance.Size = new System.Drawing.Size(160, 30);
-            this.txtOpeningBalance.TabIndex = 28;
+            this.txtOpeningBalance.TabIndex = 130;
             // 
             // lblAvailableBalance
             // 

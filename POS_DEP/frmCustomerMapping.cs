@@ -40,8 +40,8 @@ namespace POS
         private void btnSave_Click(object sender, EventArgs e)
         {
             CustomerMappingDTO objToAdd = new CustomerMappingDTO();
-            Decimal rate = 0;
-            Decimal ItemRate = 0;
+            double rate = 0;
+            double ItemRate = 0;
             if (this.ddlCustomer.SelectedIndex == 0)
             {
                 MessageBox.Show("Please select Customer Name", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -59,7 +59,7 @@ namespace POS
             }
             if (!string.IsNullOrWhiteSpace(this.txtRate.Text))
             {
-                if (!Decimal.TryParse(this.txtRate.Text, out rate))
+                if (!double.TryParse(this.txtRate.Text, out rate))
                 {
                     MessageBox.Show("Please enter Phone no in numeric", "Information");
                     return;

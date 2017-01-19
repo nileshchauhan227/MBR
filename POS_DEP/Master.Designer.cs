@@ -38,6 +38,7 @@
             this.cashExpenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.companyMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.resetPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invenbtoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,6 +97,7 @@
             this.cashExpenseToolStripMenuItem,
             this.companyMasterToolStripMenuItem,
             this.toolStripMenuItem1,
+            this.toolStripMenuItem3,
             this.resetPasswordToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
@@ -104,55 +106,64 @@
             // codeMasterToolStripMenuItem
             // 
             this.codeMasterToolStripMenuItem.Name = "codeMasterToolStripMenuItem";
-            this.codeMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.codeMasterToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.codeMasterToolStripMenuItem.Text = "Code Master";
             this.codeMasterToolStripMenuItem.Click += new System.EventHandler(this.codeMasterToolStripMenuItem_Click);
             // 
             // itemMasterToolStripMenuItem
             // 
             this.itemMasterToolStripMenuItem.Name = "itemMasterToolStripMenuItem";
-            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.itemMasterToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            this.itemMasterToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.itemMasterToolStripMenuItem.Text = "Item Master";
             this.itemMasterToolStripMenuItem.Click += new System.EventHandler(this.itemMasterToolStripMenuItem_Click);
             // 
             // configurationToolStripMenuItem
             // 
             this.configurationToolStripMenuItem.Name = "configurationToolStripMenuItem";
-            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.configurationToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.configurationToolStripMenuItem.Text = "Configuration";
             this.configurationToolStripMenuItem.Click += new System.EventHandler(this.configurationToolStripMenuItem_Click);
             // 
             // cashExpenseToolStripMenuItem
             // 
             this.cashExpenseToolStripMenuItem.Name = "cashExpenseToolStripMenuItem";
-            this.cashExpenseToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.cashExpenseToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.cashExpenseToolStripMenuItem.Text = "Cash Expense";
             this.cashExpenseToolStripMenuItem.Click += new System.EventHandler(this.cashExpenseToolStripMenuItem_Click);
             // 
             // companyMasterToolStripMenuItem
             // 
             this.companyMasterToolStripMenuItem.Name = "companyMasterToolStripMenuItem";
-            this.companyMasterToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.companyMasterToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.companyMasterToolStripMenuItem.Text = "Vendor Master";
             this.companyMasterToolStripMenuItem.Click += new System.EventHandler(this.companyMasterToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.toolStripMenuItem1.Text = "Customer Master";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(204, 22);
+            this.toolStripMenuItem3.Text = "Customer Item Mapping";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // resetPasswordToolStripMenuItem
             // 
             this.resetPasswordToolStripMenuItem.Name = "resetPasswordToolStripMenuItem";
-            this.resetPasswordToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.resetPasswordToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.resetPasswordToolStripMenuItem.Text = "Reset Password";
             this.resetPasswordToolStripMenuItem.Click += new System.EventHandler(this.resetPasswordToolStripMenuItem_Click);
             // 
             // entryToolStripMenuItem
             // 
             this.entryToolStripMenuItem.Name = "entryToolStripMenuItem";
+            this.entryToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.entryToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
             this.entryToolStripMenuItem.Text = "&Bill";
             this.entryToolStripMenuItem.Click += new System.EventHandler(this.entryToolStripMenuItem_Click);
@@ -418,6 +429,7 @@
         private System.Windows.Forms.ToolStripMenuItem salesReturnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 

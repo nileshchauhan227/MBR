@@ -19,30 +19,28 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_CodeMaster_CodeMaster", "CodeType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CodeType), "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.CodeMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_UserLogin_UserLogin", "UserType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.UserType), "UserLogin", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.UserLogin), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_KOTMaster_CodeMaster", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CodeMaster), "KOTMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.KOTMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_KOTDetail_KOTMaster", "KOTMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.KOTMaster), "KOTDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.KOTDetail), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseMaster_CompanyMaster", "CompanyMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CompanyMaster), "PurchaseMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.PurchaseMaster), "PurchaseDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseDetail), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.SalesReturnMaster), "SalesReturnDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.SalesReturnDetail), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.PurchaseMaster), "PurchaseReturnMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseReturnMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.PurchaseReturnMaster), "PurchaseReturnDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseReturnDetail), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_BillDetails_BillDetails", "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.BillMaster), "BillDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.BillDetails), true)]
 [assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_BillDetails_ItemMaster", "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.ItemMaster), "BillDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.BillDetails), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_FirmId_CodeMaster", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.CodeMaster), "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.ItemMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_ItemMaster_CodeMaster", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CodeMaster), "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.ItemMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_ItemMaster_ItemMaster", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CodeMaster), "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.ItemMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_BillMaster_TableID_CodeMaster_ID", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.CodeMaster), "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.BillMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_BillMaster_WaiterID_CodeMaster_ID", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.CodeMaster), "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.BillMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_ItemBarcode_BillMaster", "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.BillMaster), "ItemBarcode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.ItemBarcode), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_SalesReturnMaster_SalesReturnMaster", "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.BillMaster), "SalesReturnMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.SalesReturnMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_CodeMaster_CodeMaster", "CodeType", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CodeType), "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.CodeMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_KOTMaster_CodeMaster", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CodeMaster), "KOTMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.KOTMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseMaster_CompanyMaster", "CompanyMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.CompanyMaster), "PurchaseMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_CustomerMapping_CustomerMaster", "CustomerMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.CustomerMaster), "CustomerMapping", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.CustomerMapping), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_CustomerMapping_ItemMaster", "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.ItemMaster), "CustomerMapping", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.CustomerMapping), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_ItemBarcode_PurchaseDetail", "PurchaseDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.PurchaseDetail), "ItemBarcode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.ItemBarcode), true)]
 [assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_KOTDetail_ItemMaster", "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.ItemMaster), "KOTDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.KOTDetail), true)]
 [assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseDetail_ItemMaster", "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.ItemMaster), "PurchaseDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseDetail), true)]
 [assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseReturnDetail_PurchaseReturnDetail", "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.ItemMaster), "PurchaseReturnDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseReturnDetail), true)]
 [assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_SalesReturnDetail_ItemMaster", "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.ItemMaster), "SalesReturnDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.SalesReturnDetail), true)]
 [assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_StockBalance_ItemMaster", "ItemMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.ItemMaster), "StockBalance", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.StockBalance), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_ItemBarcode_PurchaseDetail", "PurchaseDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.PurchaseDetail), "ItemBarcode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.ItemBarcode), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_BillDetails_BillDetails", "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.BillMaster), "BillDetails", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.BillDetails), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_BillMaster_TableID_CodeMaster_ID", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.CodeMaster), "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.BillMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_BillMaster_WaiterID_CodeMaster_ID", "CodeMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.CodeMaster), "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.BillMaster), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_ItemBarcode_BillMaster", "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.BillMaster), "ItemBarcode", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.ItemBarcode), true)]
-[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_SalesReturnMaster_SalesReturnMaster", "BillMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.BillMaster), "SalesReturnMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.SalesReturnMaster), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_KOTDetail_KOTMaster", "KOTMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.KOTMaster), "KOTDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.KOTDetail), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.PurchaseMaster), "PurchaseDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseDetail), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.PurchaseReturnMaster), "PurchaseReturnDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.PurchaseReturnDetail), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(POS.DAL.SalesReturnMaster), "SalesReturnDetail", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.SalesReturnDetail), true)]
+[assembly: EdmRelationshipAttribute("POS_RutuModel", "FK_UserLogin_UserLogin", "UserType", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(POS.DAL.UserType), "UserLogin", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(POS.DAL.UserLogin), true)]
 
 #endregion
 
@@ -97,6 +95,54 @@ namespace POS.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<BillDetails> BillDetails
+        {
+            get
+            {
+                if ((_BillDetails == null))
+                {
+                    _BillDetails = base.CreateObjectSet<BillDetails>("BillDetails");
+                }
+                return _BillDetails;
+            }
+        }
+        private ObjectSet<BillDetails> _BillDetails;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<BillMaster> BillMaster
+        {
+            get
+            {
+                if ((_BillMaster == null))
+                {
+                    _BillMaster = base.CreateObjectSet<BillMaster>("BillMaster");
+                }
+                return _BillMaster;
+            }
+        }
+        private ObjectSet<BillMaster> _BillMaster;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<CashExpense> CashExpense
+        {
+            get
+            {
+                if ((_CashExpense == null))
+                {
+                    _CashExpense = base.CreateObjectSet<CashExpense>("CashExpense");
+                }
+                return _CashExpense;
+            }
+        }
+        private ObjectSet<CashExpense> _CashExpense;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<CodeMaster> CodeMaster
         {
             get
@@ -129,6 +175,22 @@ namespace POS.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<CompanyMaster> CompanyMaster
+        {
+            get
+            {
+                if ((_CompanyMaster == null))
+                {
+                    _CompanyMaster = base.CreateObjectSet<CompanyMaster>("CompanyMaster");
+                }
+                return _CompanyMaster;
+            }
+        }
+        private ObjectSet<CompanyMaster> _CompanyMaster;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<ConfigurationSetting> ConfigurationSetting
         {
             get
@@ -145,66 +207,66 @@ namespace POS.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<UserLogin> UserLogin
+        public ObjectSet<CustomerMapping> CustomerMapping
         {
             get
             {
-                if ((_UserLogin == null))
+                if ((_CustomerMapping == null))
                 {
-                    _UserLogin = base.CreateObjectSet<UserLogin>("UserLogin");
+                    _CustomerMapping = base.CreateObjectSet<CustomerMapping>("CustomerMapping");
                 }
-                return _UserLogin;
+                return _CustomerMapping;
             }
         }
-        private ObjectSet<UserLogin> _UserLogin;
+        private ObjectSet<CustomerMapping> _CustomerMapping;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<UserType> UserType
+        public ObjectSet<CustomerMaster> CustomerMaster
         {
             get
             {
-                if ((_UserType == null))
+                if ((_CustomerMaster == null))
                 {
-                    _UserType = base.CreateObjectSet<UserType>("UserType");
+                    _CustomerMaster = base.CreateObjectSet<CustomerMaster>("CustomerMaster");
                 }
-                return _UserType;
+                return _CustomerMaster;
             }
         }
-        private ObjectSet<UserType> _UserType;
+        private ObjectSet<CustomerMaster> _CustomerMaster;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<CashExpense> CashExpense
+        public ObjectSet<ItemBarcode> ItemBarcode
         {
             get
             {
-                if ((_CashExpense == null))
+                if ((_ItemBarcode == null))
                 {
-                    _CashExpense = base.CreateObjectSet<CashExpense>("CashExpense");
+                    _ItemBarcode = base.CreateObjectSet<ItemBarcode>("ItemBarcode");
                 }
-                return _CashExpense;
+                return _ItemBarcode;
             }
         }
-        private ObjectSet<CashExpense> _CashExpense;
+        private ObjectSet<ItemBarcode> _ItemBarcode;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<CompanyMaster> CompanyMaster
+        public ObjectSet<ItemMaster> ItemMaster
         {
             get
             {
-                if ((_CompanyMaster == null))
+                if ((_ItemMaster == null))
                 {
-                    _CompanyMaster = base.CreateObjectSet<CompanyMaster>("CompanyMaster");
+                    _ItemMaster = base.CreateObjectSet<ItemMaster>("ItemMaster");
                 }
-                return _CompanyMaster;
+                return _ItemMaster;
             }
         }
-        private ObjectSet<CompanyMaster> _CompanyMaster;
+        private ObjectSet<ItemMaster> _ItemMaster;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -241,22 +303,6 @@ namespace POS.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<BillDetails> BillDetails
-        {
-            get
-            {
-                if ((_BillDetails == null))
-                {
-                    _BillDetails = base.CreateObjectSet<BillDetails>("BillDetails");
-                }
-                return _BillDetails;
-            }
-        }
-        private ObjectSet<BillDetails> _BillDetails;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<PurchaseDetail> PurchaseDetail
         {
             get
@@ -285,6 +331,38 @@ namespace POS.DAL
             }
         }
         private ObjectSet<PurchaseMaster> _PurchaseMaster;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<PurchaseReturnDetail> PurchaseReturnDetail
+        {
+            get
+            {
+                if ((_PurchaseReturnDetail == null))
+                {
+                    _PurchaseReturnDetail = base.CreateObjectSet<PurchaseReturnDetail>("PurchaseReturnDetail");
+                }
+                return _PurchaseReturnDetail;
+            }
+        }
+        private ObjectSet<PurchaseReturnDetail> _PurchaseReturnDetail;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<PurchaseReturnMaster> PurchaseReturnMaster
+        {
+            get
+            {
+                if ((_PurchaseReturnMaster == null))
+                {
+                    _PurchaseReturnMaster = base.CreateObjectSet<PurchaseReturnMaster>("PurchaseReturnMaster");
+                }
+                return _PurchaseReturnMaster;
+            }
+        }
+        private ObjectSet<PurchaseReturnMaster> _PurchaseReturnMaster;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -337,102 +415,78 @@ namespace POS.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PurchaseReturnDetail> PurchaseReturnDetail
+        public ObjectSet<tblNarration> tblNarration
         {
             get
             {
-                if ((_PurchaseReturnDetail == null))
+                if ((_tblNarration == null))
                 {
-                    _PurchaseReturnDetail = base.CreateObjectSet<PurchaseReturnDetail>("PurchaseReturnDetail");
+                    _tblNarration = base.CreateObjectSet<tblNarration>("tblNarration");
                 }
-                return _PurchaseReturnDetail;
+                return _tblNarration;
             }
         }
-        private ObjectSet<PurchaseReturnDetail> _PurchaseReturnDetail;
+        private ObjectSet<tblNarration> _tblNarration;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<PurchaseReturnMaster> PurchaseReturnMaster
+        public ObjectSet<UserLogin> UserLogin
         {
             get
             {
-                if ((_PurchaseReturnMaster == null))
+                if ((_UserLogin == null))
                 {
-                    _PurchaseReturnMaster = base.CreateObjectSet<PurchaseReturnMaster>("PurchaseReturnMaster");
+                    _UserLogin = base.CreateObjectSet<UserLogin>("UserLogin");
                 }
-                return _PurchaseReturnMaster;
+                return _UserLogin;
             }
         }
-        private ObjectSet<PurchaseReturnMaster> _PurchaseReturnMaster;
+        private ObjectSet<UserLogin> _UserLogin;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<ItemMaster> ItemMaster
+        public ObjectSet<UserType> UserType
         {
             get
             {
-                if ((_ItemMaster == null))
+                if ((_UserType == null))
                 {
-                    _ItemMaster = base.CreateObjectSet<ItemMaster>("ItemMaster");
+                    _UserType = base.CreateObjectSet<UserType>("UserType");
                 }
-                return _ItemMaster;
+                return _UserType;
             }
         }
-        private ObjectSet<ItemMaster> _ItemMaster;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<CustomerMaster> CustomerMaster
-        {
-            get
-            {
-                if ((_CustomerMaster == null))
-                {
-                    _CustomerMaster = base.CreateObjectSet<CustomerMaster>("CustomerMaster");
-                }
-                return _CustomerMaster;
-            }
-        }
-        private ObjectSet<CustomerMaster> _CustomerMaster;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<ItemBarcode> ItemBarcode
-        {
-            get
-            {
-                if ((_ItemBarcode == null))
-                {
-                    _ItemBarcode = base.CreateObjectSet<ItemBarcode>("ItemBarcode");
-                }
-                return _ItemBarcode;
-            }
-        }
-        private ObjectSet<ItemBarcode> _ItemBarcode;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<BillMaster> BillMaster
-        {
-            get
-            {
-                if ((_BillMaster == null))
-                {
-                    _BillMaster = base.CreateObjectSet<BillMaster>("BillMaster");
-                }
-                return _BillMaster;
-            }
-        }
-        private ObjectSet<BillMaster> _BillMaster;
+        private ObjectSet<UserType> _UserType;
 
         #endregion
 
         #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the BillDetails EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToBillDetails(BillDetails billDetails)
+        {
+            base.AddObject("BillDetails", billDetails);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the BillMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToBillMaster(BillMaster billMaster)
+        {
+            base.AddObject("BillMaster", billMaster);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the CashExpense EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCashExpense(CashExpense cashExpense)
+        {
+            base.AddObject("CashExpense", cashExpense);
+        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the CodeMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -451,6 +505,14 @@ namespace POS.DAL
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the CompanyMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToCompanyMaster(CompanyMaster companyMaster)
+        {
+            base.AddObject("CompanyMaster", companyMaster);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the ConfigurationSetting EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToConfigurationSetting(ConfigurationSetting configurationSetting)
@@ -459,35 +521,35 @@ namespace POS.DAL
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the UserLogin EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the CustomerMapping EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToUserLogin(UserLogin userLogin)
+        public void AddToCustomerMapping(CustomerMapping customerMapping)
         {
-            base.AddObject("UserLogin", userLogin);
+            base.AddObject("CustomerMapping", customerMapping);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the UserType EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the CustomerMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToUserType(UserType userType)
+        public void AddToCustomerMaster(CustomerMaster customerMaster)
         {
-            base.AddObject("UserType", userType);
+            base.AddObject("CustomerMaster", customerMaster);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the CashExpense EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the ItemBarcode EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToCashExpense(CashExpense cashExpense)
+        public void AddToItemBarcode(ItemBarcode itemBarcode)
         {
-            base.AddObject("CashExpense", cashExpense);
+            base.AddObject("ItemBarcode", itemBarcode);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the CompanyMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the ItemMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToCompanyMaster(CompanyMaster companyMaster)
+        public void AddToItemMaster(ItemMaster itemMaster)
         {
-            base.AddObject("CompanyMaster", companyMaster);
+            base.AddObject("ItemMaster", itemMaster);
         }
     
         /// <summary>
@@ -507,14 +569,6 @@ namespace POS.DAL
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the BillDetails EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToBillDetails(BillDetails billDetails)
-        {
-            base.AddObject("BillDetails", billDetails);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the PurchaseDetail EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToPurchaseDetail(PurchaseDetail purchaseDetail)
@@ -528,6 +582,22 @@ namespace POS.DAL
         public void AddToPurchaseMaster(PurchaseMaster purchaseMaster)
         {
             base.AddObject("PurchaseMaster", purchaseMaster);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the PurchaseReturnDetail EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPurchaseReturnDetail(PurchaseReturnDetail purchaseReturnDetail)
+        {
+            base.AddObject("PurchaseReturnDetail", purchaseReturnDetail);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the PurchaseReturnMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPurchaseReturnMaster(PurchaseReturnMaster purchaseReturnMaster)
+        {
+            base.AddObject("PurchaseReturnMaster", purchaseReturnMaster);
         }
     
         /// <summary>
@@ -555,51 +625,27 @@ namespace POS.DAL
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the PurchaseReturnDetail EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the tblNarration EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPurchaseReturnDetail(PurchaseReturnDetail purchaseReturnDetail)
+        public void AddTotblNarration(tblNarration tblNarration)
         {
-            base.AddObject("PurchaseReturnDetail", purchaseReturnDetail);
+            base.AddObject("tblNarration", tblNarration);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the PurchaseReturnMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the UserLogin EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToPurchaseReturnMaster(PurchaseReturnMaster purchaseReturnMaster)
+        public void AddToUserLogin(UserLogin userLogin)
         {
-            base.AddObject("PurchaseReturnMaster", purchaseReturnMaster);
+            base.AddObject("UserLogin", userLogin);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the ItemMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the UserType EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToItemMaster(ItemMaster itemMaster)
+        public void AddToUserType(UserType userType)
         {
-            base.AddObject("ItemMaster", itemMaster);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the CustomerMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToCustomerMaster(CustomerMaster customerMaster)
-        {
-            base.AddObject("CustomerMaster", customerMaster);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the ItemBarcode EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToItemBarcode(ItemBarcode itemBarcode)
-        {
-            base.AddObject("ItemBarcode", itemBarcode);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the BillMaster EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToBillMaster(BillMaster billMaster)
-        {
-            base.AddObject("BillMaster", billMaster);
+            base.AddObject("UserType", userType);
         }
 
         #endregion
@@ -678,7 +724,8 @@ namespace POS.DAL
         /// No Metadata Documentation available.
         /// </summary>
         /// <param name="type">No Metadata Documentation available.</param>
-        public int UpodateStockBalance(global::System.String type)
+        /// <param name="date">No Metadata Documentation available.</param>
+        public int UpodateStockBalance(global::System.String type, Nullable<global::System.DateTime> date)
         {
             ObjectParameter typeParameter;
             if (type != null)
@@ -690,7 +737,17 @@ namespace POS.DAL
                 typeParameter = new ObjectParameter("type", typeof(global::System.String));
             }
     
-            return base.ExecuteFunction("UpodateStockBalance", typeParameter);
+            ObjectParameter dateParameter;
+            if (date.HasValue)
+            {
+                dateParameter = new ObjectParameter("date", date);
+            }
+            else
+            {
+                dateParameter = new ObjectParameter("date", typeof(global::System.DateTime));
+            }
+    
+            return base.ExecuteFunction("UpodateStockBalance", typeParameter, dateParameter);
         }
 
         #endregion
@@ -982,44 +1039,6 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_BillDetails_ItemMaster", "ItemMaster")]
-        public ItemMaster ItemMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<ItemMaster> ItemMasterReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_BillDetails_BillDetails", "BillMaster")]
         public BillMaster BillMaster
         {
@@ -1048,6 +1067,44 @@ namespace POS.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<BillMaster>("POS_RutuModel.FK_BillDetails_BillDetails", "BillMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_BillDetails_ItemMaster", "ItemMaster")]
+        public ItemMaster ItemMaster
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ItemMaster> ItemMasterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ItemMaster>("POS_RutuModel.FK_BillDetails_ItemMaster", "ItemMaster", value);
                 }
             }
         }
@@ -1665,6 +1722,54 @@ namespace POS.DAL
         private Nullable<global::System.Int32> _BillTypeId;
         partial void OnBillTypeIdChanging(Nullable<global::System.Int32> value);
         partial void OnBillTypeIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> NarrationId
+        {
+            get
+            {
+                return _NarrationId;
+            }
+            set
+            {
+                OnNarrationIdChanging(value);
+                ReportPropertyChanging("NarrationId");
+                _NarrationId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NarrationId");
+                OnNarrationIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _NarrationId;
+        partial void OnNarrationIdChanging(Nullable<global::System.Int32> value);
+        partial void OnNarrationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ChallanNo
+        {
+            get
+            {
+                return _ChallanNo;
+            }
+            set
+            {
+                OnChallanNoChanging(value);
+                ReportPropertyChanging("ChallanNo");
+                _ChallanNo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ChallanNo");
+                OnChallanNoChanged();
+            }
+        }
+        private global::System.String _ChallanNo;
+        partial void OnChallanNoChanging(global::System.String value);
+        partial void OnChallanNoChanged();
 
         #endregion
 
@@ -2193,6 +2298,50 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_BillMaster_TableID_CodeMaster_ID", "BillMaster")]
+        public EntityCollection<BillMaster> BillMaster
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_TableID_CodeMaster_ID", "BillMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_TableID_CodeMaster_ID", "BillMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_BillMaster_WaiterID_CodeMaster_ID", "BillMaster")]
+        public EntityCollection<BillMaster> BillMaster1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_WaiterID_CodeMaster_ID", "BillMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_WaiterID_CodeMaster_ID", "BillMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_CodeMaster_CodeMaster", "CodeType")]
         public CodeType CodeType
         {
@@ -2243,116 +2392,6 @@ namespace POS.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<KOTMaster>("POS_RutuModel.FK_KOTMaster_CodeMaster", "KOTMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_FirmId_CodeMaster", "ItemMaster")]
-        public EntityCollection<ItemMaster> ItemMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ItemMaster>("POS_RutuModel.FK_FirmId_CodeMaster", "ItemMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ItemMaster>("POS_RutuModel.FK_FirmId_CodeMaster", "ItemMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemMaster_CodeMaster", "ItemMaster")]
-        public EntityCollection<ItemMaster> ItemMaster1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ItemMaster>("POS_RutuModel.FK_ItemMaster_CodeMaster", "ItemMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ItemMaster>("POS_RutuModel.FK_ItemMaster_CodeMaster", "ItemMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemMaster_ItemMaster", "ItemMaster")]
-        public EntityCollection<ItemMaster> ItemMaster2
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ItemMaster>("POS_RutuModel.FK_ItemMaster_ItemMaster", "ItemMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ItemMaster>("POS_RutuModel.FK_ItemMaster_ItemMaster", "ItemMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_BillMaster_TableID_CodeMaster_ID", "BillMaster")]
-        public EntityCollection<BillMaster> BillMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_TableID_CodeMaster_ID", "BillMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_TableID_CodeMaster_ID", "BillMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_BillMaster_WaiterID_CodeMaster_ID", "BillMaster")]
-        public EntityCollection<BillMaster> BillMaster1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_WaiterID_CodeMaster_ID", "BillMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BillMaster>("POS_RutuModel.FK_BillMaster_WaiterID_CodeMaster_ID", "BillMaster", value);
                 }
             }
         }
@@ -2971,6 +3010,215 @@ namespace POS.DAL
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="POS_RutuModel", Name="CustomerMapping")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class CustomerMapping : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new CustomerMapping object.
+        /// </summary>
+        /// <param name="mappingId">Initial value of the MappingId property.</param>
+        public static CustomerMapping CreateCustomerMapping(global::System.Int32 mappingId)
+        {
+            CustomerMapping customerMapping = new CustomerMapping();
+            customerMapping.MappingId = mappingId;
+            return customerMapping;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MappingId
+        {
+            get
+            {
+                return _MappingId;
+            }
+            set
+            {
+                if (_MappingId != value)
+                {
+                    OnMappingIdChanging(value);
+                    ReportPropertyChanging("MappingId");
+                    _MappingId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MappingId");
+                    OnMappingIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MappingId;
+        partial void OnMappingIdChanging(global::System.Int32 value);
+        partial void OnMappingIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> CustomerId
+        {
+            get
+            {
+                return _CustomerId;
+            }
+            set
+            {
+                OnCustomerIdChanging(value);
+                ReportPropertyChanging("CustomerId");
+                _CustomerId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CustomerId");
+                OnCustomerIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _CustomerId;
+        partial void OnCustomerIdChanging(Nullable<global::System.Int32> value);
+        partial void OnCustomerIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> ItemId
+        {
+            get
+            {
+                return _ItemId;
+            }
+            set
+            {
+                OnItemIdChanging(value);
+                ReportPropertyChanging("ItemId");
+                _ItemId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ItemId");
+                OnItemIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _ItemId;
+        partial void OnItemIdChanging(Nullable<global::System.Int32> value);
+        partial void OnItemIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> Rate
+        {
+            get
+            {
+                return _Rate;
+            }
+            set
+            {
+                OnRateChanging(value);
+                ReportPropertyChanging("Rate");
+                _Rate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Rate");
+                OnRateChanged();
+            }
+        }
+        private Nullable<global::System.Double> _Rate;
+        partial void OnRateChanging(Nullable<global::System.Double> value);
+        partial void OnRateChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_CustomerMapping_CustomerMaster", "CustomerMaster")]
+        public CustomerMaster CustomerMaster
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerMaster>("POS_RutuModel.FK_CustomerMapping_CustomerMaster", "CustomerMaster").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerMaster>("POS_RutuModel.FK_CustomerMapping_CustomerMaster", "CustomerMaster").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<CustomerMaster> CustomerMasterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CustomerMaster>("POS_RutuModel.FK_CustomerMapping_CustomerMaster", "CustomerMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CustomerMaster>("POS_RutuModel.FK_CustomerMapping_CustomerMaster", "CustomerMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_CustomerMapping_ItemMaster", "ItemMaster")]
+        public ItemMaster ItemMaster
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_CustomerMapping_ItemMaster", "ItemMaster").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_CustomerMapping_ItemMaster", "ItemMaster").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<ItemMaster> ItemMasterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ItemMaster>("POS_RutuModel.FK_CustomerMapping_ItemMaster", "ItemMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ItemMaster>("POS_RutuModel.FK_CustomerMapping_ItemMaster", "ItemMaster", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="POS_RutuModel", Name="CustomerMaster")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -3235,10 +3483,156 @@ namespace POS.DAL
         private Nullable<global::System.Boolean> _IsDeleted;
         partial void OnIsDeletedChanging(Nullable<global::System.Boolean> value);
         partial void OnIsDeletedChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String GSTNo
+        {
+            get
+            {
+                return _GSTNo;
+            }
+            set
+            {
+                OnGSTNoChanging(value);
+                ReportPropertyChanging("GSTNo");
+                _GSTNo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("GSTNo");
+                OnGSTNoChanged();
+            }
+        }
+        private global::System.String _GSTNo;
+        partial void OnGSTNoChanging(global::System.String value);
+        partial void OnGSTNoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CSTNo
+        {
+            get
+            {
+                return _CSTNo;
+            }
+            set
+            {
+                OnCSTNoChanging(value);
+                ReportPropertyChanging("CSTNo");
+                _CSTNo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("CSTNo");
+                OnCSTNoChanged();
+            }
+        }
+        private global::System.String _CSTNo;
+        partial void OnCSTNoChanging(global::System.String value);
+        partial void OnCSTNoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String PANNo
+        {
+            get
+            {
+                return _PANNo;
+            }
+            set
+            {
+                OnPANNoChanging(value);
+                ReportPropertyChanging("PANNo");
+                _PANNo = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PANNo");
+                OnPANNoChanged();
+            }
+        }
+        private global::System.String _PANNo;
+        partial void OnPANNoChanging(global::System.String value);
+        partial void OnPANNoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String CustomerAddress2
+        {
+            get
+            {
+                return _CustomerAddress2;
+            }
+            set
+            {
+                OnCustomerAddress2Changing(value);
+                ReportPropertyChanging("CustomerAddress2");
+                _CustomerAddress2 = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("CustomerAddress2");
+                OnCustomerAddress2Changed();
+            }
+        }
+        private global::System.String _CustomerAddress2;
+        partial void OnCustomerAddress2Changing(global::System.String value);
+        partial void OnCustomerAddress2Changed();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> code
+        {
+            get
+            {
+                return _code;
+            }
+            set
+            {
+                OncodeChanging(value);
+                ReportPropertyChanging("code");
+                _code = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("code");
+                OncodeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _code;
+        partial void OncodeChanging(Nullable<global::System.Int32> value);
+        partial void OncodeChanged();
 
         #endregion
 
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_CustomerMapping_CustomerMaster", "CustomerMapping")]
+        public EntityCollection<CustomerMapping> CustomerMapping
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CustomerMapping>("POS_RutuModel.FK_CustomerMapping_CustomerMaster", "CustomerMapping");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CustomerMapping>("POS_RutuModel.FK_CustomerMapping_CustomerMaster", "CustomerMapping", value);
+                }
+            }
+        }
+
+        #endregion
+
     }
     
     /// <summary>
@@ -3429,44 +3823,6 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemBarcode_PurchaseDetail", "PurchaseDetail")]
-        public PurchaseDetail PurchaseDetail
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<PurchaseDetail> PurchaseDetailReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemBarcode_BillMaster", "BillMaster")]
         public BillMaster BillMaster
         {
@@ -3495,6 +3851,44 @@ namespace POS.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<BillMaster>("POS_RutuModel.FK_ItemBarcode_BillMaster", "BillMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemBarcode_PurchaseDetail", "PurchaseDetail")]
+        public PurchaseDetail PurchaseDetail
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PurchaseDetail> PurchaseDetailReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PurchaseDetail>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "PurchaseDetail", value);
                 }
             }
         }
@@ -3684,7 +4078,7 @@ namespace POS.DAL
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> Rate
+        public Nullable<global::System.Double> Rate
         {
             get
             {
@@ -3699,8 +4093,8 @@ namespace POS.DAL
                 OnRateChanged();
             }
         }
-        private Nullable<global::System.Decimal> _Rate;
-        partial void OnRateChanging(Nullable<global::System.Decimal> value);
+        private Nullable<global::System.Double> _Rate;
+        partial void OnRateChanging(Nullable<global::System.Double> value);
         partial void OnRateChanged();
     
         /// <summary>
@@ -3870,6 +4264,30 @@ namespace POS.DAL
         private Nullable<global::System.Boolean> _IsUniqueSerialNumber;
         partial void OnIsUniqueSerialNumberChanging(Nullable<global::System.Boolean> value);
         partial void OnIsUniqueSerialNumberChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> partycode
+        {
+            get
+            {
+                return _partycode;
+            }
+            set
+            {
+                OnpartycodeChanging(value);
+                ReportPropertyChanging("partycode");
+                _partycode = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("partycode");
+                OnpartycodeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _partycode;
+        partial void OnpartycodeChanging(Nullable<global::System.Int32> value);
+        partial void OnpartycodeChanged();
 
         #endregion
 
@@ -3904,110 +4322,18 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_FirmId_CodeMaster", "CodeMaster")]
-        public CodeMaster CodeMaster
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_CustomerMapping_ItemMaster", "CustomerMapping")]
+        public EntityCollection<CustomerMapping> CustomerMapping
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_FirmId_CodeMaster", "CodeMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_FirmId_CodeMaster", "CodeMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<CodeMaster> CodeMasterReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_FirmId_CodeMaster", "CodeMaster");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<CustomerMapping>("POS_RutuModel.FK_CustomerMapping_ItemMaster", "CustomerMapping");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CodeMaster>("POS_RutuModel.FK_FirmId_CodeMaster", "CodeMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemMaster_CodeMaster", "CodeMaster")]
-        public CodeMaster CodeMaster1
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_CodeMaster", "CodeMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_CodeMaster", "CodeMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<CodeMaster> CodeMaster1Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_CodeMaster", "CodeMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_CodeMaster", "CodeMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemMaster_ItemMaster", "CodeMaster")]
-        public CodeMaster CodeMaster2
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_ItemMaster", "CodeMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_ItemMaster", "CodeMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<CodeMaster> CodeMaster2Reference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_ItemMaster", "CodeMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<CodeMaster>("POS_RutuModel.FK_ItemMaster_ItemMaster", "CodeMaster", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CustomerMapping>("POS_RutuModel.FK_CustomerMapping_ItemMaster", "CustomerMapping", value);
                 }
             }
         }
@@ -4309,44 +4635,6 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_KOTDetail_KOTMaster", "KOTMaster")]
-        public KOTMaster KOTMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<KOTMaster> KOTMasterReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_KOTDetail_ItemMaster", "ItemMaster")]
         public ItemMaster ItemMaster
         {
@@ -4375,6 +4663,44 @@ namespace POS.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ItemMaster>("POS_RutuModel.FK_KOTDetail_ItemMaster", "ItemMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_KOTDetail_KOTMaster", "KOTMaster")]
+        public KOTMaster KOTMaster
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<KOTMaster> KOTMasterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<KOTMaster>("POS_RutuModel.FK_KOTDetail_KOTMaster", "KOTMaster", value);
                 }
             }
         }
@@ -4817,6 +5143,30 @@ namespace POS.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ItemCode
+        {
+            get
+            {
+                return _ItemCode;
+            }
+            set
+            {
+                OnItemCodeChanging(value);
+                ReportPropertyChanging("ItemCode");
+                _ItemCode = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ItemCode");
+                OnItemCodeChanged();
+            }
+        }
+        private global::System.String _ItemCode;
+        partial void OnItemCodeChanging(global::System.String value);
+        partial void OnItemCodeChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String Description
@@ -4933,30 +5283,6 @@ namespace POS.DAL
         private Nullable<global::System.Decimal> _MRPPerItem;
         partial void OnMRPPerItemChanging(Nullable<global::System.Decimal> value);
         partial void OnMRPPerItemChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String ItemCode
-        {
-            get
-            {
-                return _ItemCode;
-            }
-            set
-            {
-                OnItemCodeChanging(value);
-                ReportPropertyChanging("ItemCode");
-                _ItemCode = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("ItemCode");
-                OnItemCodeChanged();
-            }
-        }
-        private global::System.String _ItemCode;
-        partial void OnItemCodeChanging(global::System.String value);
-        partial void OnItemCodeChanged();
 
         #endregion
 
@@ -4969,34 +5295,18 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster")]
-        public PurchaseMaster PurchaseMaster
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemBarcode_PurchaseDetail", "ItemBarcode")]
+        public EntityCollection<ItemBarcode> ItemBarcode
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<PurchaseMaster> PurchaseMasterReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ItemBarcode>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "ItemBarcode");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ItemBarcode>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "ItemBarcode", value);
                 }
             }
         }
@@ -5045,18 +5355,34 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_ItemBarcode_PurchaseDetail", "ItemBarcode")]
-        public EntityCollection<ItemBarcode> ItemBarcode
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster")]
+        public PurchaseMaster PurchaseMaster
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ItemBarcode>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "ItemBarcode");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PurchaseMaster> PurchaseMasterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ItemBarcode>("POS_RutuModel.FK_ItemBarcode_PurchaseDetail", "ItemBarcode", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseDetail_PurchaseMaster", "PurchaseMaster", value);
                 }
             }
         }
@@ -5559,28 +5885,6 @@ namespace POS.DAL
                 }
             }
         }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseReturnMaster")]
-        public EntityCollection<PurchaseReturnMaster> PurchaseReturnMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseReturnMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseReturnMaster", value);
-                }
-            }
-        }
 
         #endregion
 
@@ -5775,44 +6079,6 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster")]
-        public PurchaseReturnMaster PurchaseReturnMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<PurchaseReturnMaster> PurchaseReturnMasterReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseReturnDetail_PurchaseReturnDetail", "ItemMaster")]
         public ItemMaster ItemMaster
         {
@@ -5841,6 +6107,44 @@ namespace POS.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ItemMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnDetail", "ItemMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster")]
+        public PurchaseReturnMaster PurchaseReturnMaster
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<PurchaseReturnMaster> PurchaseReturnMasterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PurchaseReturnMaster>("POS_RutuModel.FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnMaster", value);
                 }
             }
         }
@@ -6114,44 +6418,6 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseMaster")]
-        public PurchaseMaster PurchaseMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<PurchaseMaster> PurchaseMasterReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PurchaseMaster>("POS_RutuModel.FK_PurchaseReturnMaster_PurchaseReturnMaster", "PurchaseMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_PurchaseReturnDetail_PurchaseReturnMaster", "PurchaseReturnDetail")]
         public EntityCollection<PurchaseReturnDetail> PurchaseReturnDetail
         {
@@ -6365,44 +6631,6 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster")]
-        public SalesReturnMaster SalesReturnMaster
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<SalesReturnMaster> SalesReturnMasterReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_SalesReturnDetail_ItemMaster", "ItemMaster")]
         public ItemMaster ItemMaster
         {
@@ -6431,6 +6659,44 @@ namespace POS.DAL
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ItemMaster>("POS_RutuModel.FK_SalesReturnDetail_ItemMaster", "ItemMaster", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster")]
+        public SalesReturnMaster SalesReturnMaster
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<SalesReturnMaster> SalesReturnMasterReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SalesReturnMaster>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnMaster", value);
                 }
             }
         }
@@ -6678,28 +6944,6 @@ namespace POS.DAL
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnDetail")]
-        public EntityCollection<SalesReturnDetail> SalesReturnDetail
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<SalesReturnDetail>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnDetail");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<SalesReturnDetail>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnDetail", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_SalesReturnMaster_SalesReturnMaster", "BillMaster")]
         public BillMaster BillMaster
         {
@@ -6731,6 +6975,28 @@ namespace POS.DAL
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("POS_RutuModel", "FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnDetail")]
+        public EntityCollection<SalesReturnDetail> SalesReturnDetail
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<SalesReturnDetail>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnDetail");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<SalesReturnDetail>("POS_RutuModel.FK_SalesReturnDetail_SalesReturnMaster", "SalesReturnDetail", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -6751,16 +7017,14 @@ namespace POS.DAL
         /// </summary>
         /// <param name="id">Initial value of the ID property.</param>
         /// <param name="itemID">Initial value of the ItemID property.</param>
-        /// <param name="itemCode">Initial value of the ItemCode property.</param>
         /// <param name="transactionDate">Initial value of the TransactionDate property.</param>
         /// <param name="createdBy">Initial value of the CreatedBy property.</param>
         /// <param name="createdDate">Initial value of the CreatedDate property.</param>
-        public static StockBalance CreateStockBalance(global::System.Int64 id, global::System.Int32 itemID, global::System.String itemCode, global::System.DateTime transactionDate, global::System.Int32 createdBy, global::System.DateTime createdDate)
+        public static StockBalance CreateStockBalance(global::System.Int64 id, global::System.Int32 itemID, global::System.DateTime transactionDate, global::System.Int32 createdBy, global::System.DateTime createdDate)
         {
             StockBalance stockBalance = new StockBalance();
             stockBalance.ID = id;
             stockBalance.ItemID = itemID;
-            stockBalance.ItemCode = itemCode;
             stockBalance.TransactionDate = transactionDate;
             stockBalance.CreatedBy = createdBy;
             stockBalance.CreatedDate = createdDate;
@@ -6825,7 +7089,7 @@ namespace POS.DAL
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String ItemCode
         {
@@ -6837,7 +7101,7 @@ namespace POS.DAL
             {
                 OnItemCodeChanging(value);
                 ReportPropertyChanging("ItemCode");
-                _ItemCode = StructuralObject.SetValidValue(value, false);
+                _ItemCode = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("ItemCode");
                 OnItemCodeChanged();
             }
@@ -6923,6 +7187,30 @@ namespace POS.DAL
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> PurchaseReturn
+        {
+            get
+            {
+                return _PurchaseReturn;
+            }
+            set
+            {
+                OnPurchaseReturnChanging(value);
+                ReportPropertyChanging("PurchaseReturn");
+                _PurchaseReturn = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PurchaseReturn");
+                OnPurchaseReturnChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _PurchaseReturn;
+        partial void OnPurchaseReturnChanging(Nullable<global::System.Decimal> value);
+        partial void OnPurchaseReturnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Decimal> Sales
         {
             get
@@ -6941,6 +7229,30 @@ namespace POS.DAL
         private Nullable<global::System.Decimal> _Sales;
         partial void OnSalesChanging(Nullable<global::System.Decimal> value);
         partial void OnSalesChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Decimal> SalesReturn
+        {
+            get
+            {
+                return _SalesReturn;
+            }
+            set
+            {
+                OnSalesReturnChanging(value);
+                ReportPropertyChanging("SalesReturn");
+                _SalesReturn = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SalesReturn");
+                OnSalesReturnChanged();
+            }
+        }
+        private Nullable<global::System.Decimal> _SalesReturn;
+        partial void OnSalesReturnChanging(Nullable<global::System.Decimal> value);
+        partial void OnSalesReturnChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -7085,54 +7397,6 @@ namespace POS.DAL
         private Nullable<global::System.Boolean> _IsDeleted;
         partial void OnIsDeletedChanging(Nullable<global::System.Boolean> value);
         partial void OnIsDeletedChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> PurchaseReturn
-        {
-            get
-            {
-                return _PurchaseReturn;
-            }
-            set
-            {
-                OnPurchaseReturnChanging(value);
-                ReportPropertyChanging("PurchaseReturn");
-                _PurchaseReturn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("PurchaseReturn");
-                OnPurchaseReturnChanged();
-            }
-        }
-        private Nullable<global::System.Decimal> _PurchaseReturn;
-        partial void OnPurchaseReturnChanging(Nullable<global::System.Decimal> value);
-        partial void OnPurchaseReturnChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Decimal> SalesReturn
-        {
-            get
-            {
-                return _SalesReturn;
-            }
-            set
-            {
-                OnSalesReturnChanging(value);
-                ReportPropertyChanging("SalesReturn");
-                _SalesReturn = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("SalesReturn");
-                OnSalesReturnChanged();
-            }
-        }
-        private Nullable<global::System.Decimal> _SalesReturn;
-        partial void OnSalesReturnChanging(Nullable<global::System.Decimal> value);
-        partial void OnSalesReturnChanged();
 
         #endregion
 
@@ -7179,6 +7443,111 @@ namespace POS.DAL
 
         #endregion
 
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="POS_RutuModel", Name="tblNarration")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class tblNarration : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new tblNarration object.
+        /// </summary>
+        /// <param name="narrationId">Initial value of the NarrationId property.</param>
+        public static tblNarration CreatetblNarration(global::System.Int32 narrationId)
+        {
+            tblNarration tblNarration = new tblNarration();
+            tblNarration.NarrationId = narrationId;
+            return tblNarration;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 NarrationId
+        {
+            get
+            {
+                return _NarrationId;
+            }
+            set
+            {
+                if (_NarrationId != value)
+                {
+                    OnNarrationIdChanging(value);
+                    ReportPropertyChanging("NarrationId");
+                    _NarrationId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("NarrationId");
+                    OnNarrationIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _NarrationId;
+        partial void OnNarrationIdChanging(global::System.Int32 value);
+        partial void OnNarrationIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Narration
+        {
+            get
+            {
+                return _Narration;
+            }
+            set
+            {
+                OnNarrationChanging(value);
+                ReportPropertyChanging("Narration");
+                _Narration = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Narration");
+                OnNarrationChanged();
+            }
+        }
+        private global::System.String _Narration;
+        partial void OnNarrationChanging(global::System.String value);
+        partial void OnNarrationChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> IsDeledted
+        {
+            get
+            {
+                return _IsDeledted;
+            }
+            set
+            {
+                OnIsDeledtedChanging(value);
+                ReportPropertyChanging("IsDeledted");
+                _IsDeledted = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IsDeledted");
+                OnIsDeledtedChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _IsDeledted;
+        partial void OnIsDeledtedChanging(Nullable<global::System.Boolean> value);
+        partial void OnIsDeledtedChanged();
+
+        #endregion
+
+    
     }
     
     /// <summary>

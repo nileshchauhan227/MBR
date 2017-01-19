@@ -23,6 +23,13 @@ namespace POS.BAL
                 return obj.GetItemsForBilling();
             }
         }
+        public static List<ItemMasterDTO> GetItemsForCustomer()
+        {
+            using (clsDItemMaster obj = new clsDItemMaster())
+            {
+                return obj.GetItemsForCustomer();
+            }
+        }
         public static ItemMasterDTO GetItems(int ItemID)
         {
             using (clsDItemMaster obj = new clsDItemMaster())

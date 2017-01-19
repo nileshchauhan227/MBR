@@ -14,7 +14,7 @@ namespace POS.DTO
         public bool IsServed { get; set; }
         public string ItemCode { get; set; }
         public string ItemName { get; set; }
-        public decimal? ItemRate { get; set; }
+        public double? ItemRate { get; set; }
         public decimal? Discount { get; set; }
         public decimal? OtherDiscount { get; set; }
         public bool IsDeleted { get; set; }

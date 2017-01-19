@@ -8,6 +8,7 @@
     <EntitySet Name="CodeType" EntityType="POS_RutuModel.Store.CodeType" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CompanyMaster" EntityType="POS_RutuModel.Store.CompanyMaster" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ConfigurationSetting" EntityType="POS_RutuModel.Store.ConfigurationSetting" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerMapping" EntityType="POS_RutuModel.Store.CustomerMapping" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CustomerMaster" EntityType="POS_RutuModel.Store.CustomerMaster" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ItemBarcode" EntityType="POS_RutuModel.Store.ItemBarcode" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ItemMaster" EntityType="POS_RutuModel.Store.ItemMaster" store:Type="Tables" Schema="dbo" />
@@ -20,6 +21,7 @@
     <EntitySet Name="SalesReturnDetail" EntityType="POS_RutuModel.Store.SalesReturnDetail" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="SalesReturnMaster" EntityType="POS_RutuModel.Store.SalesReturnMaster" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="StockBalance" EntityType="POS_RutuModel.Store.StockBalance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tblNarration" EntityType="POS_RutuModel.Store.tblNarration" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserLogin" EntityType="POS_RutuModel.Store.UserLogin" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserType" EntityType="POS_RutuModel.Store.UserType" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_BillDetails_BillDetails" Association="POS_RutuModel.Store.FK_BillDetails_BillDetails">
@@ -42,9 +44,13 @@
       <End Role="CodeType" EntitySet="CodeType" />
       <End Role="CodeMaster" EntitySet="CodeMaster" />
     </AssociationSet>
-    <AssociationSet Name="FK_FirmId_CodeMaster" Association="POS_RutuModel.Store.FK_FirmId_CodeMaster">
-      <End Role="CodeMaster" EntitySet="CodeMaster" />
+    <AssociationSet Name="FK_CustomerMapping_CustomerMaster" Association="POS_RutuModel.Store.FK_CustomerMapping_CustomerMaster">
+      <End Role="CustomerMaster" EntitySet="CustomerMaster" />
+      <End Role="CustomerMapping" EntitySet="CustomerMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerMapping_ItemMaster" Association="POS_RutuModel.Store.FK_CustomerMapping_ItemMaster">
       <End Role="ItemMaster" EntitySet="ItemMaster" />
+      <End Role="CustomerMapping" EntitySet="CustomerMapping" />
     </AssociationSet>
     <AssociationSet Name="FK_ItemBarcode_BillMaster" Association="POS_RutuModel.Store.FK_ItemBarcode_BillMaster">
       <End Role="BillMaster" EntitySet="BillMaster" />
@@ -53,14 +59,6 @@
     <AssociationSet Name="FK_ItemBarcode_PurchaseDetail" Association="POS_RutuModel.Store.FK_ItemBarcode_PurchaseDetail">
       <End Role="PurchaseDetail" EntitySet="PurchaseDetail" />
       <End Role="ItemBarcode" EntitySet="ItemBarcode" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ItemMaster_CodeMaster" Association="POS_RutuModel.Store.FK_ItemMaster_CodeMaster">
-      <End Role="CodeMaster" EntitySet="CodeMaster" />
-      <End Role="ItemMaster" EntitySet="ItemMaster" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ItemMaster_ItemMaster" Association="POS_RutuModel.Store.FK_ItemMaster_ItemMaster">
-      <End Role="CodeMaster" EntitySet="CodeMaster" />
-      <End Role="ItemMaster" EntitySet="ItemMaster" />
     </AssociationSet>
     <AssociationSet Name="FK_KOTDetail_ItemMaster" Association="POS_RutuModel.Store.FK_KOTDetail_ItemMaster">
       <End Role="ItemMaster" EntitySet="ItemMaster" />
@@ -158,6 +156,8 @@
     <Property Name="AdditionalPercentage" Type="decimal" Scale="2" />
     <Property Name="AdditionalTax" Type="decimal" Scale="2" />
     <Property Name="BillTypeId" Type="int" />
+    <Property Name="NarrationId" Type="int" />
+    <Property Name="ChallanNo" Type="varchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="CashExpense">
     <Key>
@@ -215,6 +215,15 @@
     <Property Name="UpdatedBy" Type="int" />
     <Property Name="UpdatedDate" Type="datetime" />
   </EntityType>
+  <EntityType Name="CustomerMapping">
+    <Key>
+      <PropertyRef Name="MappingId" />
+    </Key>
+    <Property Name="MappingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="ItemId" Type="int" />
+    <Property Name="Rate" Type="float" />
+  </EntityType>
   <EntityType Name="CustomerMaster">
     <Key>
       <PropertyRef Name="CustomerId" />
@@ -229,6 +238,11 @@
     <Property Name="UpdatedBy" Type="int" />
     <Property Name="UpdatedDate" Type="datetime" />
     <Property Name="IsDeleted" Type="bit" />
+    <Property Name="GSTNo" Type="varchar" MaxLength="50" />
+    <Property Name="CSTNo" Type="varchar" MaxLength="50" />
+    <Property Name="PANNo" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerAddress2" Type="varchar" MaxLength="1000" />
+    <Property Name="code" Type="int" />
   </EntityType>
   <EntityType Name="ItemBarcode">
     <Key>
@@ -252,7 +266,7 @@
     <Property Name="GroupID" Type="int" Nullable="false" />
     <Property Name="UnitID" Type="int" Nullable="false" />
     <Property Name="Discount" Type="decimal" Scale="2" />
-    <Property Name="Rate" Type="decimal" Scale="2" />
+    <Property Name="Rate" Type="float" />
     <Property Name="OtherDiscount" Type="decimal" Scale="2" />
     <Property Name="IsActive" Type="bit" />
     <Property Name="FirmId" Type="int" />
@@ -260,6 +274,7 @@
     <Property Name="OpeningBalance" Type="decimal" />
     <Property Name="IsSaleable" Type="bit" />
     <Property Name="IsUniqueSerialNumber" Type="bit" />
+    <Property Name="partycode" Type="int" />
   </EntityType>
   <EntityType Name="KOTDetail">
     <Key>
@@ -390,6 +405,14 @@
     <Property Name="UpdatedDate" Type="datetime" />
     <Property Name="IsDeleted" Type="bit" />
   </EntityType>
+  <EntityType Name="tblNarration">
+    <Key>
+      <PropertyRef Name="NarrationId" />
+    </Key>
+    <Property Name="NarrationId" Type="int" Nullable="false" />
+    <Property Name="Narration" Type="varchar" MaxLength="1000" />
+    <Property Name="IsDeledted" Type="bit" />
+  </EntityType>
   <EntityType Name="UserLogin">
     <Key>
       <PropertyRef Name="ID" />
@@ -467,15 +490,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_FirmId_CodeMaster">
-    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="0..1" />
-    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="*" />
+  <Association Name="FK_CustomerMapping_CustomerMaster">
+    <End Role="CustomerMaster" Type="POS_RutuModel.Store.CustomerMaster" Multiplicity="0..1" />
+    <End Role="CustomerMapping" Type="POS_RutuModel.Store.CustomerMapping" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CodeMaster">
-        <PropertyRef Name="ID" />
+      <Principal Role="CustomerMaster">
+        <PropertyRef Name="CustomerId" />
       </Principal>
-      <Dependent Role="ItemMaster">
-        <PropertyRef Name="FirmId" />
+      <Dependent Role="CustomerMapping">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerMapping_ItemMaster">
+    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="0..1" />
+    <End Role="CustomerMapping" Type="POS_RutuModel.Store.CustomerMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMaster">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="CustomerMapping">
+        <PropertyRef Name="ItemId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -500,30 +535,6 @@
       </Principal>
       <Dependent Role="ItemBarcode">
         <PropertyRef Name="PurchaseDetailID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ItemMaster_CodeMaster">
-    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="1" />
-    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CodeMaster">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ItemMaster">
-        <PropertyRef Name="UnitID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ItemMaster_ItemMaster">
-    <End Role="CodeMaster" Type="POS_RutuModel.Store.CodeMaster" Multiplicity="1" />
-    <End Role="ItemMaster" Type="POS_RutuModel.Store.ItemMaster" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="CodeMaster">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="ItemMaster">
-        <PropertyRef Name="GroupID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -721,5 +732,6 @@
   </Function>
   <Function Name="UpodateStockBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="type" Type="char" Mode="In" />
+    <Parameter Name="date" Type="date" Mode="In" />
   </Function>
 </Schema>

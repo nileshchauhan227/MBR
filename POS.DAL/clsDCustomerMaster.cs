@@ -14,6 +14,7 @@ namespace POS.DAL
             using (POS_RutuEntities context = new POS_RutuEntities())
             {
                 var res = (from x in context.CustomerMaster.Where(x => x.IsDeleted == false)
+                           orderby x.CustomerName
                            select new CustomerDTO
                            {
                                CustomerId = x.CustomerId,

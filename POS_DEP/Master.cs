@@ -146,6 +146,13 @@ namespace POS
                     frmCustomerMaster.MdiParent = this;
                     frmCustomerMaster.Show();
                     break;
+                case "frmCustomerMapping":
+                    frmCustomerMapping frmCustomerMapping = new frmCustomerMapping();
+                    //if (!CheckForDuplicate(ItemMaster))
+                    //{
+                    frmCustomerMapping.MdiParent = this;
+                    frmCustomerMapping.Show();
+                    break;
                 case "KOT":
 
                     frmKOT frmKOT = new frmKOT();
@@ -419,6 +426,11 @@ namespace POS
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OpenForm("frmCustomerMaster");
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            OpenForm("frmCustomerMapping");
         }
     }
 }

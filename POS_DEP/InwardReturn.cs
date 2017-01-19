@@ -413,7 +413,8 @@ namespace POS
         }
         private void InwardReturn_Load(object sender, EventArgs e)
         {
-            if (!clsBStockBalance.IsOpeningExists(DateTime.Now))
+            bool IsManageInventory = clsBConfiguration.GetConfigVal(Constants.ConfigurationKey.ManageInventory) == "1";
+            if (!clsBStockBalance.IsOpeningExists(DateTime.Now) && IsManageInventory)
             {
                 MessageBox.Show("You cannot do transaction without Start Day Transaction.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 this.BeginInvoke(new MethodInvoker(this.Close));
