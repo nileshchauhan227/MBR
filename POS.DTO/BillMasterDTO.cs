@@ -41,7 +41,7 @@ namespace POS.DTO
         public int NarrationId { get; set; }
         public string ChallanNo { get; set; }
         public string TableName { get; set; }
-
+       // public string TableName { get; set; }
         public string BillNumber
         {
             get
